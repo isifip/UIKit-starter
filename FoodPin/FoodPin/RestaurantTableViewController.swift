@@ -26,6 +26,7 @@ class RestaurantTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.dataSource = dataSource
+        tableView.separatorStyle = .none
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
         
@@ -37,7 +38,7 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     func ConfigureDataSource() -> UITableViewDiffableDataSource<Section, String> {
-        let cellIdentifier = "datacell"
+        let cellIdentifier = "favoritecell"
         let dataSource = UITableViewDiffableDataSource<Section, String>(
             tableView: tableView,
             cellProvider: { tableView, indexPath, restaurantName in
