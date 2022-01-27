@@ -27,6 +27,7 @@ class RestaurantTableViewController: UITableViewController {
         
         snapshot.appendSections([.all])
         snapshot.appendItems(restaurantNames, toSection: .all)
+        
         dataSource.apply(snapshot, animatingDifferences: false, completion: nil)
         
     }
@@ -41,7 +42,7 @@ class RestaurantTableViewController: UITableViewController {
                     for: indexPath
                 )
                 cell.textLabel?.text = restaurantName
-                cell.imageView?.image = UIImage(named: "restaurant")
+                cell.imageView?.image = UIImage(named: self.restaurantNames[indexPath.row])
                 
                 return cell
             }
