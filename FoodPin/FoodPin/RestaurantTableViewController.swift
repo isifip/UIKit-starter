@@ -16,6 +16,8 @@ class RestaurantTableViewController: UITableViewController {
     // retrieved until after the instance initialization completes
     lazy var dataSource = ConfigureDataSource()
     
+    var restaurantIsFavorites = Array(repeating: false, count: 21)
+    
     var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats", "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional", "Barrafina", "Donostia", "Royal Oak", "CASK Pub and Kitchen"]
     
     var restaurantLocations = ["Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Sydney", "Sydney", "Sydney", "New York", "New York", "New York", "New York", "New York", "New York", "New York", "London", "London", "London", "London"]
@@ -50,6 +52,7 @@ class RestaurantTableViewController: UITableViewController {
                 cell.locationLabel.text = self.restaurantLocations[indexPath.row]
                 cell.typeLabel.text = self.restaurantTypes[indexPath.row]
                 cell.thumbnailImageView.image = UIImage(named: self.restaurantNames[indexPath.row])
+                cell.accessoryType = self.restaurantIsFavorites[indexPath.row] ? .checkmark : .none
                 
                 return cell
             }
@@ -94,11 +97,15 @@ class RestaurantTableViewController: UITableViewController {
             handler: { (action:UIAlertAction!) in
                 let cell = tableView.cellForRow(at: indexPath)
                 cell?.accessoryType = .checkmark
+                self.restaurantIsFavorites[indexPath.row] = true
             }
         )
         optionMenu.addAction(favoriteAction)
         
         //Display Menu
         present(optionMenu, animated: true, completion: nil)
+        
+        // Deselect the row
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
