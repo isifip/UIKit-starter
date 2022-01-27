@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="120" id="VjE-Yl-W2R">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="120" id="VjE-Yl-W2R" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VjE-Yl-W2R" id="5Jv-Zr-tH5">
@@ -66,6 +66,12 @@
                                         <constraint firstItem="l6h-o4-kdb" firstAttribute="leading" secondItem="5Jv-Zr-tH5" secondAttribute="leadingMargin" id="FJp-ZI-8rs"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="locationLabel" destination="tES-mk-FCg" id="UT4-Yx-w8w"/>
+                                    <outlet property="nameLabel" destination="dwN-CO-0T0" id="4gs-Oa-4Ym"/>
+                                    <outlet property="thumbnailImageView" destination="TGc-pQ-CMi" id="uIq-E6-KQU"/>
+                                    <outlet property="typeLabel" destination="w0j-jc-Ufw" id="ARU-OO-HkA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
