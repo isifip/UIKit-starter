@@ -27,8 +27,6 @@ class RestaurantTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.cellLayoutMarginsFollowReadableWidth = true
-        
         tableView.dataSource = dataSource
         tableView.separatorStyle = .none
         
@@ -37,7 +35,9 @@ class RestaurantTableViewController: UITableViewController {
         snapshot.appendSections([.all])
         snapshot.appendItems(restaurantNames, toSection: .all)
         
-        dataSource.apply(snapshot, animatingDifferences: false, completion: nil)
+        dataSource.apply(snapshot, animatingDifferences: false)
+        
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         
     }
     
@@ -54,7 +54,9 @@ class RestaurantTableViewController: UITableViewController {
                 cell.locationLabel.text = self.restaurantLocations[indexPath.row]
                 cell.typeLabel.text = self.restaurantTypes[indexPath.row]
                 cell.thumbnailImageView.image = UIImage(named: self.restaurantNames[indexPath.row])
-                cell.accessoryType = self.restaurantIsFavorites[indexPath.row] ? .checkmark : .none
+                
+                cell.favoriteIcon.isHidden = self.restaurantIsFavorites[indexPath.row] ? false : true
+
                 
                 return cell
             }
@@ -97,15 +99,11 @@ class RestaurantTableViewController: UITableViewController {
             title: self.restaurantIsFavorites[indexPath.row] == true ? "Deselect as favorite" : "Mark as favorite",
             style: .default,
             handler: { (action:UIAlertAction!) in
-                let cell = tableView.cellForRow(at: indexPath)
+                let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
                 
-                if self.restaurantIsFavorites[indexPath.row] {
-                    self.restaurantIsFavorites[indexPath.row] = false
-                    cell?.accessoryType = .none
-                } else {
-                    cell?.accessoryType = .checkmark
-                    self.restaurantIsFavorites[indexPath.row] = true
-                }
+                cell.favoriteIcon.isHidden = self.restaurantIsFavorites[indexPath.row]
+                
+                self.restaurantIsFavorites[indexPath.row] = self.restaurantIsFavorites[indexPath.row] ? false : true
                
             }
         )
