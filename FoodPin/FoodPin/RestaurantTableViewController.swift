@@ -27,6 +27,8 @@ class RestaurantTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.cellLayoutMarginsFollowReadableWidth = true
+        
         tableView.dataSource = dataSource
         tableView.separatorStyle = .none
         
@@ -92,12 +94,19 @@ class RestaurantTableViewController: UITableViewController {
         
         // Mark as favorite action
         let favoriteAction = UIAlertAction(
-            title: "Mark as favorite",
+            title: self.restaurantIsFavorites[indexPath.row] == true ? "Deselect as favorite" : "Mark as favorite",
             style: .default,
             handler: { (action:UIAlertAction!) in
                 let cell = tableView.cellForRow(at: indexPath)
-                cell?.accessoryType = .checkmark
-                self.restaurantIsFavorites[indexPath.row] = true
+                
+                if self.restaurantIsFavorites[indexPath.row] {
+                    self.restaurantIsFavorites[indexPath.row] = false
+                    cell?.accessoryType = .none
+                } else {
+                    cell?.accessoryType = .checkmark
+                    self.restaurantIsFavorites[indexPath.row] = true
+                }
+               
             }
         )
         optionMenu.addAction(favoriteAction)
@@ -105,7 +114,15 @@ class RestaurantTableViewController: UITableViewController {
         //Display Menu
         present(optionMenu, animated: true, completion: nil)
         
+        if let popoverController = optionMenu.popoverPresentationController {
+            if let cell = tableView.cellForRow(at: indexPath) {
+                popoverController.sourceView = cell
+                popoverController.sourceRect = cell.bounds
+            }
+        }
+        
         // Deselect the row
         tableView.deselectRow(at: indexPath, animated: false)
+        
     }
 }
