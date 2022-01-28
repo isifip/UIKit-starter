@@ -14,15 +14,29 @@ class RestaurantTableViewController: UITableViewController {
     }
     // We use lazy because without its initial value cannot be
     // retrieved until after the instance initialization completes
-    lazy var dataSource = ConfigureDataSource()
+    lazy var dataSource = configureDataSource()
     
-    var restaurantIsFavorites = Array(repeating: false, count: 21)
-    
-    var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats", "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional", "Barrafina", "Donostia", "Royal Oak", "CASK Pub and Kitchen"]
-    
-    var restaurantLocations = ["Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Sydney", "Sydney", "Sydney", "New York", "New York", "New York", "New York", "New York", "New York", "New York", "London", "London", "London", "London"]
-    
-    var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
+    var restaurants: [Restaurant] = [
+        Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "Hong Kong", image: "Cafe Deadend", isFavorite: false),
+        Restaurant(name: "Homei", type: "Cafe", location: "Hong Kong", image: "Homei", isFavorite: false),
+        Restaurant(name: "Teakha", type: "Tea House", location: "Hong Kong", image: "Teakha", isFavorite: false),
+        Restaurant(name: "Cafe Loisl", type: "Austrian / Causual Drink", location: "Hong Kong", image: "Cafe Loisl", isFavorite: false),
+        Restaurant(name: "Petite Oyster", type: "French", location: "Hong Kong", image: "Petite Oyster", isFavorite: false),
+        Restaurant(name: "For Kee Restaurant", type: "Bakery", location: "Hong Kong", image: "For Kee Restaurant", isFavorite: false),
+        Restaurant(name: "Po's Atelier", type: "Bakery", location: "Hong Kong", image: "Po's Atelier", isFavorite: false),
+        Restaurant(name: "Bourke Street Bakery", type: "Chocolate", location: "Sydney", image: "Bourke Street Bakery", isFavorite: false),
+        Restaurant(name: "Haigh's Chocolate", type: "Cafe", location: "Sydney", image: "Haigh's Chocolate", isFavorite: false),
+        Restaurant(name: "Palomino Espresso", type: "American / Seafood", location: "Sydney", image: "Palomino Espresso", isFavorite: false),
+        Restaurant(name: "Upstate", type: "American", location: "New York", image: "Upstate", isFavorite: false),
+        Restaurant(name: "Traif", type: "American", location: "New York", image: "Traif", isFavorite: false),
+        Restaurant(name: "Graham Avenue Meats", type: "Breakfast & Brunch", location: "New York", image: "Graham Avenue Meats", isFavorite: false),
+        Restaurant(name: "Waffle & Wolf", type: "Coffee & Tea", location: "New York", image: "Waffle & Wolf", isFavorite: false),
+        Restaurant(name: "Five Leaves", type: "Coffee & Tea", location: "New York", image: "Five Leaves", isFavorite: false),
+        Restaurant(name: "Barrafina", type: "Spanish", location: "London", image: "Barrafina", isFavorite: false),
+        Restaurant(name: "Donostia", type: "Spanish", location: "London", image: "Donostia", isFavorite: false),
+        Restaurant(name: "Royal Oak", type: "British", location: "London", image: "Royal Oak", isFavorite: false),
+        Restaurant(name: "CASK Pub and Kitchen", type: "Thai", location: "London", image: "CASK Pub and Kitchen", isFavorite: false)
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +44,10 @@ class RestaurantTableViewController: UITableViewController {
         tableView.dataSource = dataSource
         tableView.separatorStyle = .none
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Restaurant>()
         
         snapshot.appendSections([.all])
-        snapshot.appendItems(restaurantNames, toSection: .all)
+        snapshot.appendItems(restaurants, toSection: .all)
         
         dataSource.apply(snapshot, animatingDifferences: false)
         
@@ -41,26 +55,25 @@ class RestaurantTableViewController: UITableViewController {
         
     }
     
-    func ConfigureDataSource() -> UITableViewDiffableDataSource<Section, String> {
-        let cellIdentifier = "favoritecell"
-        let dataSource = UITableViewDiffableDataSource<Section, String>(
-            tableView: tableView,
-            cellProvider: { tableView, indexPath, restaurantName in
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: cellIdentifier,
-                    for: indexPath
-                ) as! RestaurantTableViewCell
-                cell.nameLabel.text = restaurantName
-                cell.locationLabel.text = self.restaurantLocations[indexPath.row]
-                cell.typeLabel.text = self.restaurantTypes[indexPath.row]
-                cell.thumbnailImageView.image = UIImage(named: self.restaurantNames[indexPath.row])
-                
-                cell.favoriteIcon.isHidden = self.restaurantIsFavorites[indexPath.row] ? false : true
+    func configureDataSource() -> UITableViewDiffableDataSource<Section, Restaurant> {
 
-                
+        let cellIdentifier = "favoritecell"
+
+        let dataSource = UITableViewDiffableDataSource<Section, Restaurant>(
+            tableView: tableView,
+            cellProvider: {  tableView, indexPath, restaurant in
+                let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
+
+                cell.nameLabel.text = restaurant.name
+                cell.locationLabel.text = restaurant.location
+                cell.typeLabel.text = restaurant.type
+                cell.thumbnailImageView.image = UIImage(named: restaurant.image)
+                cell.favoriteIcon.isHidden = restaurant.isFavorite ? false : true
+
                 return cell
             }
         )
+
         return dataSource
     }
     
@@ -95,16 +108,17 @@ class RestaurantTableViewController: UITableViewController {
         optionMenu.addAction(reverseAction)
         
         // Mark as favorite action
+        let favoriteActionTitle = self.restaurants[indexPath.row].isFavorite ? "Remove from favorites" : "Mark as favorite"
         let favoriteAction = UIAlertAction(
-            title: self.restaurantIsFavorites[indexPath.row] == true ? "Deselect as favorite" : "Mark as favorite",
+            title: favoriteActionTitle,
             style: .default,
             handler: { (action:UIAlertAction!) in
                 let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
                 
-                cell.favoriteIcon.isHidden = self.restaurantIsFavorites[indexPath.row]
+                cell.favoriteIcon.isHidden = self.restaurants[indexPath.row].isFavorite
                 
-                self.restaurantIsFavorites[indexPath.row] = self.restaurantIsFavorites[indexPath.row] ? false : true
-               
+                self.restaurants[indexPath.row].isFavorite = self.restaurants[indexPath.row].isFavorite ? false : true
+                
             }
         )
         optionMenu.addAction(favoriteAction)
