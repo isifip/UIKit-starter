@@ -9,9 +9,6 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController {
     
-    enum Section {
-        case all
-    }
     // We use lazy because without its initial value cannot be
     // retrieved until after the instance initialization completes
     lazy var dataSource = configureDataSource()
@@ -38,6 +35,7 @@ class RestaurantTableViewController: UITableViewController {
         Restaurant(name: "CASK Pub and Kitchen", type: "Thai", location: "London", image: "CASK Pub and Kitchen", isFavorite: false)
     ]
     
+    //MARK: --> View controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,11 +53,12 @@ class RestaurantTableViewController: UITableViewController {
         
     }
     
-    func configureDataSource() -> UITableViewDiffableDataSource<Section, Restaurant> {
+    //MARK: --> UITableView diffable Data Source
+    func configureDataSource() -> RestaurantDiffableDataSource {
 
         let cellIdentifier = "favoritecell"
 
-        let dataSource = UITableViewDiffableDataSource<Section, Restaurant>(
+        let dataSource = RestaurantDiffableDataSource(
             tableView: tableView,
             cellProvider: {  tableView, indexPath, restaurant in
                 let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
@@ -77,6 +76,7 @@ class RestaurantTableViewController: UITableViewController {
         return dataSource
     }
     
+    //MARK: --> UITableViewDelegate Protocol
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Create an option menu as an action sheet
         let optionMenu = UIAlertController(
