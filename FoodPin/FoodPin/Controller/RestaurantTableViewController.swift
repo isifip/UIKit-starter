@@ -160,11 +160,24 @@ class RestaurantTableViewController: UITableViewController {
             } else {
                 activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
             }
+            
+            if let popoverController = activityController.popoverPresentationController {
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    popoverController.sourceView = cell
+                    popoverController.sourceRect = cell.bounds
+                }
+            }
         
             self.present(activityController, animated: true, completion: nil)
             completionHandler(true)
         }
         // Configure both actions as swipe action
+        
+        deleteAction.backgroundColor = UIColor.systemRed
+        deleteAction.image = UIImage(systemName: "trash")
+        shareAction.backgroundColor = UIColor.systemOrange
+        shareAction.image = UIImage(systemName: "square.and.arrow.up")
+        
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
         return swipeConfiguration
     }
