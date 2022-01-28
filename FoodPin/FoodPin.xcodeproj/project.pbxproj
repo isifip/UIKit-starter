@@ -89,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				C7588F0C27A30083000447DE /* RestaurantTableViewCell.swift */,
-				C7D1D3E627A43068008EB8BA /* RestaurantDetailViewController.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -98,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				C7588F0A27A2F6DA000447DE /* RestaurantTableViewController.swift */,
+				C7D1D3E627A43068008EB8BA /* RestaurantDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
