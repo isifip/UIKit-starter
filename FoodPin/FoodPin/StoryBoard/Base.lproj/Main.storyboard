@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wrv-1d-F5c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zrb-yE-AQR">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Restaurant Table View Controller-->
+        <!--FoodPin-->
         <scene sceneID="UJS-5C-FMN">
             <objects>
                 <tableViewController id="Wrv-1d-F5c" customClass="RestaurantTableViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +35,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dUI-I2-Thh">
-                                                    <rect key="frame" x="120" y="0.0" width="230" height="62.333333333333336"/>
+                                                    <rect key="frame" x="120" y="0.0" width="186" height="62.333333333333336"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwN-CO-0T0">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="23"/>
@@ -56,6 +57,14 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="s94-ee-Klh">
+                                                    <rect key="frame" x="326" y="1.9999999999999982" width="24" height="21"/>
+                                                    <color key="tintColor" systemColor="systemYellowColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="Ico-o8-kmG"/>
+                                                        <constraint firstAttribute="height" constant="24" id="nWV-8U-ft2"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                         </stackView>
                                     </subviews>
@@ -67,10 +76,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="favoriteIcon" destination="s94-ee-Klh" id="m8A-6F-17u"/>
                                     <outlet property="locationLabel" destination="tES-mk-FCg" id="UT4-Yx-w8w"/>
                                     <outlet property="nameLabel" destination="dwN-CO-0T0" id="4gs-Oa-4Ym"/>
                                     <outlet property="thumbnailImageView" destination="TGc-pQ-CMi" id="uIq-E6-KQU"/>
                                     <outlet property="typeLabel" destination="w0j-jc-Ufw" id="ARU-OO-HkA"/>
+                                    <segue destination="UOa-2z-Pea" kind="show" identifier="showRestaurantDetail" id="5ZL-6c-7QM"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoritecell" id="yMC-CY-uEI" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
@@ -142,6 +153,7 @@
                                     <outlet property="nameLabel" destination="KqY-f7-bdA" id="prg-Yc-Ajt"/>
                                     <outlet property="thumbnailImageView" destination="Hwc-L8-5o8" id="dJg-TF-djz"/>
                                     <outlet property="typeLabel" destination="74I-64-HoL" id="dlf-bf-Jkh"/>
+                                    <segue destination="UOa-2z-Pea" kind="show" identifier="showRestaurantDetail" id="XD5-de-Lxm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -150,12 +162,64 @@
                             <outlet property="delegate" destination="Wrv-1d-F5c" id="mul-3e-Mcu"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="FoodPin" id="9o3-08-rfX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCc-vs-3Jm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="707.69230769230762" y="95.97156398104265"/>
+        </scene>
+        <!--Restaurant Detail View Controller-->
+        <scene sceneID="Jqw-Dw-lex">
+            <objects>
+                <viewController id="UOa-2z-Pea" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G4e-00-brd">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JnQ-fV-cGP">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TPJ-qa-n4q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JnQ-fV-cGP" firstAttribute="trailing" secondItem="TPJ-qa-n4q" secondAttribute="trailing" id="DHG-f2-CUn"/>
+                            <constraint firstItem="JnQ-fV-cGP" firstAttribute="top" secondItem="G4e-00-brd" secondAttribute="top" id="Ejc-fV-m30"/>
+                            <constraint firstAttribute="bottom" secondItem="JnQ-fV-cGP" secondAttribute="bottom" id="PRH-Gd-sSu"/>
+                            <constraint firstItem="JnQ-fV-cGP" firstAttribute="leading" secondItem="TPJ-qa-n4q" secondAttribute="leading" id="vyp-vi-tNm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KXT-Ra-vQO"/>
+                    <connections>
+                        <outlet property="restaurantImageView" destination="JnQ-fV-cGP" id="q7T-J7-Csw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jrc-BN-ZrM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1606" y="96"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="F9p-1X-imx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zrb-yE-AQR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3u6-cR-7CC">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wrv-1d-F5c" kind="relationship" relationship="rootViewController" id="0Ev-Zb-e9Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E4n-Vy-vp0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-221.53846153846152" y="95.97156398104265"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5ZL-6c-7QM"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
