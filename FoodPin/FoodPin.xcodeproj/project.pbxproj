@@ -24,6 +24,7 @@
 		C7CCC78627A59B000017E747 /* UIcolor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC78527A59B000017E747 /* UIcolor-Extension.swift */; };
 		C7CCC78827A5A15F0017E747 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC78727A5A15F0017E747 /* NavigationController.swift */; };
 		C7CCC78C27A5C5C40017E747 /* RestaurantDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC78B27A5C5C40017E747 /* RestaurantDetailMapCell.swift */; };
+		C7CCC78E27A5D7B10017E747 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC78D27A5D7B10017E747 /* MapViewController.swift */; };
 		C7D1D3E727A43068008EB8BA /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1D3E627A43068008EB8BA /* RestaurantDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		C7CCC78527A59B000017E747 /* UIcolor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIcolor-Extension.swift"; sourceTree = "<group>"; };
 		C7CCC78727A5A15F0017E747 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		C7CCC78B27A5C5C40017E747 /* RestaurantDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailMapCell.swift; sourceTree = "<group>"; };
+		C7CCC78D27A5D7B10017E747 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C7D1D3E627A43068008EB8BA /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 				C7588F0A27A2F6DA000447DE /* RestaurantTableViewController.swift */,
 				C7D1D3E627A43068008EB8BA /* RestaurantDetailViewController.swift */,
 				C7CCC78727A5A15F0017E747 /* NavigationController.swift */,
+				C7CCC78D27A5D7B10017E747 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				C7D1D3E727A43068008EB8BA /* RestaurantDetailViewController.swift in Sources */,
 				C7CCC77F27A556F30017E747 /* RestaurantDetailHeaderView.swift in Sources */,
 				C7588F0B27A2F6DA000447DE /* RestaurantTableViewController.swift in Sources */,
+				C7CCC78E27A5D7B10017E747 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

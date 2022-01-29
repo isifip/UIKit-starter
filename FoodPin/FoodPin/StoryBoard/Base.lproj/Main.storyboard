@@ -380,10 +380,10 @@
             </objects>
             <point key="canvasLocation" x="1604.6153846153845" y="95.97156398104265"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="1UH-Jb-bRu">
             <objects>
-                <viewController id="DOn-XK-Jra" sceneMemberID="viewController">
+                <viewController id="DOn-XK-Jra" customClass="MapViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JoD-gb-UvO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -402,6 +402,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vQE-bM-oaU"/>
+                    <connections>
+                        <outlet property="mapVIew" destination="PP6-25-VeL" id="6no-CR-GGP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFw-9X-fAc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
