@@ -74,9 +74,9 @@
 		C7588EF527A2F36D000447DE /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
-				C7CCC77627A54F920017E747 /* Resources */,
 				C7588EF627A2F36D000447DE /* AppDelegate.swift */,
 				C7588EF827A2F36D000447DE /* SceneDelegate.swift */,
+				C7CCC77627A54F920017E747 /* Resources */,
 				C7B62EF727A3E79C00E8F6F1 /* StoryBoard */,
 				C7B62EF627A3E79600E8F6F1 /* Controller */,
 				C7B62EF527A3E79000E8F6F1 /* VIew */,

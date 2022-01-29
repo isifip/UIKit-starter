@@ -17,8 +17,17 @@ class RestaurantDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Dividers between the cells
+        tableView.separatorStyle = .singleLine
+        tableView.separatorColor = .systemGray
+        
+        // this ignores safe area at the top
+        tableView.contentInsetAdjustmentBehavior = .never
         
         navigationController?.navigationBar.prefersLargeTitles = false
         
