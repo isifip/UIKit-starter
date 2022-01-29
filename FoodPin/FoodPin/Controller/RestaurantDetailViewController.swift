@@ -30,6 +30,7 @@ class RestaurantDetailViewController: UIViewController {
         tableView.contentInsetAdjustmentBehavior = .never
         
         navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.hidesBarsOnSwipe = false
         
         // Configure header View
         headerView.nameLabel.text = restaurant.name
@@ -43,6 +44,12 @@ class RestaurantDetailViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     
 }
 

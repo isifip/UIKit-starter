@@ -67,6 +67,7 @@ class RestaurantTableViewController: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.backButtonTitle = ""
+        navigationController?.hidesBarsOnSwipe = true
         
         tableView.dataSource = dataSource
         tableView.separatorStyle = .none
@@ -80,6 +81,12 @@ class RestaurantTableViewController: UITableViewController {
         
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.hidesBarsOnSwipe = true
     }
     
     //MARK: --> UITableView diffable Data Source
