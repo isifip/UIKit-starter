@@ -216,6 +216,10 @@
                                                 <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
                                             </buttonConfiguration>
                                         </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYa-2h-yzG" userLabel="Dim VIew">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="445"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
@@ -224,7 +228,11 @@
                                         <constraint firstAttribute="bottom" secondItem="jkm-oj-whG" secondAttribute="bottom" constant="20" id="B61-vQ-pI9"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Pc9-W3-UDB" secondAttribute="trailing" constant="10" id="Ccs-44-RzT"/>
                                         <constraint firstAttribute="trailing" secondItem="jkm-oj-whG" secondAttribute="trailing" constant="150" id="FER-rR-7Zf"/>
+                                        <constraint firstAttribute="bottom" secondItem="PYa-2h-yzG" secondAttribute="bottom" id="FU5-0d-20B"/>
                                         <constraint firstItem="DHd-Ma-cWr" firstAttribute="leading" secondItem="xlr-KX-SbN" secondAttribute="leading" id="Pkg-mw-aMl"/>
+                                        <constraint firstAttribute="trailing" secondItem="PYa-2h-yzG" secondAttribute="trailing" id="QqC-7z-xL6"/>
+                                        <constraint firstItem="PYa-2h-yzG" firstAttribute="leading" secondItem="xlr-KX-SbN" secondAttribute="leading" id="bAj-o1-UcU"/>
+                                        <constraint firstItem="PYa-2h-yzG" firstAttribute="top" secondItem="xlr-KX-SbN" secondAttribute="top" id="cmg-Xr-xLM"/>
                                         <constraint firstAttribute="bottom" secondItem="DHd-Ma-cWr" secondAttribute="bottom" id="dyh-SB-bC0"/>
                                         <constraint firstItem="DHd-Ma-cWr" firstAttribute="top" secondItem="xlr-KX-SbN" secondAttribute="top" id="eAd-vq-erv"/>
                                         <constraint firstItem="Pc9-W3-UDB" firstAttribute="top" secondItem="xlr-KX-SbN" secondAttribute="topMargin" constant="10" id="vU5-ZN-IVY"/>
