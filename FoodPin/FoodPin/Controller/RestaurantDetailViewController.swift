@@ -17,11 +17,8 @@ class RestaurantDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
-        
         tableView.delegate = self
         tableView.dataSource = self
-        
         // Dividers between the cells
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = .systemGray
@@ -29,6 +26,7 @@ class RestaurantDetailViewController: UIViewController {
         // this ignores safe area at the top
         tableView.contentInsetAdjustmentBehavior = .never
         
+        // Nav bar appearance
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.hidesBarsOnSwipe = false
         
@@ -39,7 +37,6 @@ class RestaurantDetailViewController: UIViewController {
         
         let heartImage = restaurant.isFavorite ? "heart.fill" : "heart"
         headerView.heartButton.tintColor = restaurant.isFavorite ? .systemYellow : .white
-        
         headerView.heartButton.setImage(UIImage(systemName: heartImage), for: .normal)
         
     }
