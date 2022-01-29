@@ -51,6 +51,10 @@ class RestaurantDetailViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }
 
 extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDelegate {
