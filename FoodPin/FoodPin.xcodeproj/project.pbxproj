@@ -23,6 +23,7 @@
 		C7CCC78327A57A4D0017E747 /* RestaurantDetailTwoColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC78227A57A4D0017E747 /* RestaurantDetailTwoColumnCell.swift */; };
 		C7CCC78627A59B000017E747 /* UIcolor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC78527A59B000017E747 /* UIcolor-Extension.swift */; };
 		C7CCC78827A5A15F0017E747 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC78727A5A15F0017E747 /* NavigationController.swift */; };
+		C7CCC78C27A5C5C40017E747 /* RestaurantDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC78B27A5C5C40017E747 /* RestaurantDetailMapCell.swift */; };
 		C7D1D3E727A43068008EB8BA /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1D3E627A43068008EB8BA /* RestaurantDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		C7CCC78227A57A4D0017E747 /* RestaurantDetailTwoColumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTwoColumnCell.swift; sourceTree = "<group>"; };
 		C7CCC78527A59B000017E747 /* UIcolor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIcolor-Extension.swift"; sourceTree = "<group>"; };
 		C7CCC78727A5A15F0017E747 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		C7CCC78B27A5C5C40017E747 /* RestaurantDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailMapCell.swift; sourceTree = "<group>"; };
 		C7D1D3E627A43068008EB8BA /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 				C7CCC77E27A556F30017E747 /* RestaurantDetailHeaderView.swift */,
 				C7CCC78027A563C80017E747 /* RestaurantDetailTextCell.swift */,
 				C7CCC78227A57A4D0017E747 /* RestaurantDetailTwoColumnCell.swift */,
+				C7CCC78B27A5C5C40017E747 /* RestaurantDetailMapCell.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				C7CCC78327A57A4D0017E747 /* RestaurantDetailTwoColumnCell.swift in Sources */,
 				C7CCC78627A59B000017E747 /* UIcolor-Extension.swift in Sources */,
 				C7588EF927A2F36D000447DE /* SceneDelegate.swift in Sources */,
+				C7CCC78C27A5C5C40017E747 /* RestaurantDetailMapCell.swift in Sources */,
 				C7B62EF927A3F1F200E8F6F1 /* RestaurantDiffableDataSource.swift in Sources */,
 				C7D1D3E727A43068008EB8BA /* RestaurantDetailViewController.swift in Sources */,
 				C7CCC77F27A556F30017E747 /* RestaurantDetailHeaderView.swift in Sources */,
