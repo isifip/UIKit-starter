@@ -24,6 +24,7 @@ class RestaurantDetailViewController: UIViewController {
         // this ignores safe area at the top
         tableView.contentInsetAdjustmentBehavior = .never
         
+        
         // Nav bar appearance
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.hidesBarsOnSwipe = false
@@ -78,9 +79,12 @@ extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDele
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: String(describing: RestaurantDetailMapCell.self),
                 for: indexPath) as! RestaurantDetailMapCell
+            cell.configure(location: restaurant.location)
+            cell.selectionStyle = .none
             return cell
         default:
             fatalError("Failed to instantiate the table view cell for detail view controller")
         }
+        
     }
 }
