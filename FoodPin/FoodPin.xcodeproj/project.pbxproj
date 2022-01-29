@@ -18,6 +18,7 @@
 		C7B62EF927A3F1F200E8F6F1 /* RestaurantDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B62EF827A3F1F200E8F6F1 /* RestaurantDiffableDataSource.swift */; };
 		C7CCC77C27A550440017E747 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC77A27A550440017E747 /* Nunito-Bold.ttf */; };
 		C7CCC77D27A550440017E747 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7CCC77B27A550440017E747 /* Nunito-Regular.ttf */; };
+		C7CCC77F27A556F30017E747 /* RestaurantDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC77E27A556F30017E747 /* RestaurantDetailHeaderView.swift */; };
 		C7D1D3E727A43068008EB8BA /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1D3E627A43068008EB8BA /* RestaurantDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		C7B62EF827A3F1F200E8F6F1 /* RestaurantDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDiffableDataSource.swift; sourceTree = "<group>"; };
 		C7CCC77A27A550440017E747 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-Bold.ttf"; path = "../../../../../../Downloads/Nunito/static/Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		C7CCC77B27A550440017E747 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-Regular.ttf"; path = "../../../../../../Downloads/Nunito/static/Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		C7CCC77E27A556F30017E747 /* RestaurantDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailHeaderView.swift; sourceTree = "<group>"; };
 		C7D1D3E627A43068008EB8BA /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				C7588F0C27A30083000447DE /* RestaurantTableViewCell.swift */,
+				C7CCC77E27A556F30017E747 /* RestaurantDetailHeaderView.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				C7588EF927A2F36D000447DE /* SceneDelegate.swift in Sources */,
 				C7B62EF927A3F1F200E8F6F1 /* RestaurantDiffableDataSource.swift in Sources */,
 				C7D1D3E727A43068008EB8BA /* RestaurantDetailViewController.swift in Sources */,
+				C7CCC77F27A556F30017E747 /* RestaurantDetailHeaderView.swift in Sources */,
 				C7588F0B27A2F6DA000447DE /* RestaurantTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
