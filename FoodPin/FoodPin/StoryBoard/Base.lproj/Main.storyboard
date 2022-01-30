@@ -448,13 +448,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEQ-b1-7dz">
-                                <rect key="frame" x="332.33333333333331" y="0.0" width="37.666666666666686" height="37.666666666666664"/>
+                                <rect key="frame" x="332.33333333333331" y="19.999999999999996" width="37.666666666666686" height="37.666666666666657"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" image="xmark" catalog="system" cornerStyle="capsule">
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="h5r-6a-juw" kind="unwind" unwindAction="closeWithSegue:" id="IpZ-h4-Nou"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cRS-uy-s63">
                                 <rect key="frame" x="78.333333333333329" y="119.66666666666669" width="233.33333333333337" height="551"/>
@@ -507,7 +510,7 @@
                         <constraints>
                             <constraint firstItem="vKb-Yf-9up" firstAttribute="trailing" secondItem="h7w-tX-MFw" secondAttribute="trailing" id="AMo-to-G0E"/>
                             <constraint firstItem="h7w-tX-MFw" firstAttribute="trailing" secondItem="IEQ-b1-7dz" secondAttribute="trailing" constant="20" id="LKJ-3X-REM"/>
-                            <constraint firstItem="IEQ-b1-7dz" firstAttribute="top" secondItem="cBJ-pd-QHX" secondAttribute="topMargin" id="Oob-dW-MOe"/>
+                            <constraint firstItem="IEQ-b1-7dz" firstAttribute="top" secondItem="cBJ-pd-QHX" secondAttribute="topMargin" constant="20" id="Oob-dW-MOe"/>
                             <constraint firstAttribute="bottom" secondItem="vKb-Yf-9up" secondAttribute="bottom" id="Rsj-Ep-rB3"/>
                             <constraint firstItem="vKb-Yf-9up" firstAttribute="leading" secondItem="h7w-tX-MFw" secondAttribute="leading" id="Y6j-mD-Mbs"/>
                             <constraint firstItem="cRS-uy-s63" firstAttribute="centerX" secondItem="cBJ-pd-QHX" secondAttribute="centerX" id="dza-jm-7wU"/>
@@ -517,9 +520,15 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="vKb-Yf-9up" id="xva-8n-ASc"/>
+                        <outletCollection property="rateButtons" destination="dwk-zM-sOj" collectionClass="NSMutableArray" id="dr5-Cy-SQb"/>
+                        <outletCollection property="rateButtons" destination="QCR-T1-VS4" collectionClass="NSMutableArray" id="sbD-KF-2J0"/>
+                        <outletCollection property="rateButtons" destination="Cjg-H4-eRM" collectionClass="NSMutableArray" id="YO1-JB-YZw"/>
+                        <outletCollection property="rateButtons" destination="3NQ-zX-tqp" collectionClass="NSMutableArray" id="dDe-7C-GQ7"/>
+                        <outletCollection property="rateButtons" destination="Y9r-mU-9SY" collectionClass="NSMutableArray" id="ZRl-uD-r7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8q-JC-6Qq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="h5r-6a-juw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2456.9230769230767" y="843.83886255924165"/>
         </scene>
