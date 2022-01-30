@@ -15,6 +15,16 @@ class RestaurantDetailViewController: UIViewController {
     @IBAction func close(segue: UIStoryboardSegue) {
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func rateRestaurant(segue: UIStoryboardSegue) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        if let rating = Restaurant.Rating(rawValue: identifier) {
+            self.restaurant.rating = rating
+            self.headerView.ratingImageView.image = UIImage(named: rating.image)
+        }
+        dismiss(animated: true, completion: nil)
+    }
     
     var restaurant: Restaurant = Restaurant()
     
