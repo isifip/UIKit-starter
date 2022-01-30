@@ -16,6 +16,12 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapVIew.delegate = self
+        
+        mapVIew.showsScale = true
+        mapVIew.showsCompass = true
+        mapVIew.showsTraffic = true
 
         // Convert address to coordinate and annotate it on map
         let geoCoder = CLGeocoder()
@@ -40,6 +46,22 @@ class MapViewController: UIViewController {
             }
         }
     }
-    
+}
 
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "MyMarker"
+        if annotation.isKind(of: MKUserLocation.self) {
+            return nil
+        }
+        // Reuse the annotation if possible
+        var annotationView: MKMarkerAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        }
+        annotationView?.glyphImage = UIImage(systemName: "arrowtriangle.down.circle")
+        annotationView?.markerTintColor = UIColor.orange
+        return annotationView
+    }
 }
