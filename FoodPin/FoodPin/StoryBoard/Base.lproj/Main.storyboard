@@ -545,6 +545,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="vKb-Yf-9up" id="xva-8n-ASc"/>
+                        <outlet property="xmarkButton" destination="IEQ-b1-7dz" id="Kya-2D-7ag"/>
                         <outletCollection property="rateButtons" destination="dwk-zM-sOj" collectionClass="NSMutableArray" id="dr5-Cy-SQb"/>
                         <outletCollection property="rateButtons" destination="QCR-T1-VS4" collectionClass="NSMutableArray" id="sbD-KF-2J0"/>
                         <outletCollection property="rateButtons" destination="Cjg-H4-eRM" collectionClass="NSMutableArray" id="YO1-JB-YZw"/>
