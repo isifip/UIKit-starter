@@ -22,7 +22,7 @@ class RestaurantDetailViewController: UIViewController {
         tableView.separatorStyle = .none
         
         // Nav bar appearance
-        //navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.prefersLargeTitles = false
         
         
         // Configure header View
