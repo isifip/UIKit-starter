@@ -19,11 +19,20 @@ class RestaurantDetailViewController: UIViewController {
         guard let identifier = segue.identifier else {
             return
         }
-        if let rating = Restaurant.Rating(rawValue: identifier) {
-            self.restaurant.rating = rating
-            self.headerView.ratingImageView.image = UIImage(named: rating.image)
+        dismiss(animated: true) {
+            if let rating = Restaurant.Rating(rawValue: identifier) {
+                self.restaurant.rating = rating
+                self.headerView.ratingImageView.image = UIImage(named: rating.image)
+            }
+            let scaleTransofrm = CGAffineTransform.init(scaleX: 0.1, y: 0.1)
+            self.headerView.ratingImageView.transform = scaleTransofrm
+            self.headerView.ratingImageView.alpha = 0
+            
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.7, options: [], animations: {
+                self.headerView.ratingImageView.transform = .identity
+                self.headerView.ratingImageView.alpha = 1
+            }, completion: nil)
         }
-        dismiss(animated: true, completion: nil)
     }
     
     var restaurant: Restaurant = Restaurant()
