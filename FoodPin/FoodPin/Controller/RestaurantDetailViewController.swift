@@ -21,13 +21,9 @@ class RestaurantDetailViewController: UIViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         
-        // this ignores safe area at the top
-        tableView.contentInsetAdjustmentBehavior = .never
-        
-        
         // Nav bar appearance
-        navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.hidesBarsOnSwipe = false
+        //navigationController?.navigationBar.prefersLargeTitles = false
+        
         
         // Configure header View
         headerView.nameLabel.text = restaurant.name
@@ -39,18 +35,6 @@ class RestaurantDetailViewController: UIViewController {
         headerView.heartButton.setImage(UIImage(systemName: heartImage), for: .normal)
         
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.hidesBarsOnSwipe = false
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMap" {
             let destinationController = segue.destination as! MapViewController
