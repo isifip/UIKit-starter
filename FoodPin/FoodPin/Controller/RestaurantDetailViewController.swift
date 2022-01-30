@@ -56,6 +56,7 @@ extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDele
                 withIdentifier: String(describing: RestaurantDetailTextCell.self),
                 for: indexPath) as! RestaurantDetailTextCell
             cell.descriptionLabel.text = restaurant.description
+            cell.selectionStyle = .none
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(
@@ -65,6 +66,7 @@ extension RestaurantDetailViewController: UITableViewDataSource, UITableViewDele
             cell.column1TextLabel.text = restaurant.location
             cell.column2TitleLabel.text = "Phone"
             cell.column2TextLabel.text = restaurant.phone
+            cell.selectionStyle = .none
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(
