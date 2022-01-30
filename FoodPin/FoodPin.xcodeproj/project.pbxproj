@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C725FF0827A6C61F00032A33 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725FF0727A6C61F00032A33 /* ReviewViewController.swift */; };
 		C7588EF727A2F36D000447DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7588EF627A2F36D000447DE /* AppDelegate.swift */; };
 		C7588EF927A2F36D000447DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7588EF827A2F36D000447DE /* SceneDelegate.swift */; };
 		C7588EFE27A2F36D000447DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7588EFC27A2F36D000447DE /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C725FF0727A6C61F00032A33 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		C7588EF327A2F36D000447DE /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7588EF627A2F36D000447DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7588EF827A2F36D000447DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				C7D1D3E627A43068008EB8BA /* RestaurantDetailViewController.swift */,
 				C7CCC78727A5A15F0017E747 /* NavigationController.swift */,
 				C7CCC78D27A5D7B10017E747 /* MapViewController.swift */,
+				C725FF0727A6C61F00032A33 /* ReviewViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			files = (
 				C7B62EF327A3DF0E00E8F6F1 /* Restaurant.swift in Sources */,
 				C7CCC78827A5A15F0017E747 /* NavigationController.swift in Sources */,
+				C725FF0827A6C61F00032A33 /* ReviewViewController.swift in Sources */,
 				C7CCC78127A563C80017E747 /* RestaurantDetailTextCell.swift in Sources */,
 				C7588F0D27A30083000447DE /* RestaurantTableViewCell.swift in Sources */,
 				C7588EF727A2F36D000447DE /* AppDelegate.swift in Sources */,
