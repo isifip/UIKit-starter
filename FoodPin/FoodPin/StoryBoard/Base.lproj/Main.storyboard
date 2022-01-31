@@ -768,6 +768,11 @@
                                 <segue destination="Fqf-xD-so1" kind="unwind" unwindAction="unwindToHomeWithSegue:" id="FjC-GO-463"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="TSV-j2-22b">
+                            <connections>
+                                <action selector="saveButtonTappedWithSender:" destination="nkA-em-NvK" id="CcC-MD-5Ol"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="390" height="900"/>
                     <connections>

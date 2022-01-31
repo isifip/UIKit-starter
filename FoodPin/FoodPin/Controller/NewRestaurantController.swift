@@ -49,6 +49,25 @@ class NewRestaurantController: UITableViewController {
         }
     }
     
+    //MARK: --> Save button action
+    @IBAction func saveButtonTapped(sender: UIButton) {
+        if nameTextField.text == "" || typeTextField.text == "" || addressTextField.text == "" || phoneTextField.text == "" || descriptionTextView.text == "" {
+            let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required.", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            present(alertController, animated: true, completion: nil)
+            
+            return
+        }
+        print("Name: \(nameTextField.text ?? "")")
+        print("Type: \(typeTextField.text ?? "")")
+        print("Location: \(addressTextField.text ?? "")")
+        print("Phone: \(phoneTextField.text ?? "")")
+        print("Description: \(descriptionTextView.text ?? "")")
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Get the superview's layout
@@ -63,6 +82,12 @@ class NewRestaurantController: UITableViewController {
         photoImageView.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
         // Pin the bottom edge of the image view to the margin's bottom edge
         photoImageView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
+        
+        
+        // Dismiss keyboard
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
