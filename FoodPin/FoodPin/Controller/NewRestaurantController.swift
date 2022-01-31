@@ -42,6 +42,13 @@ class NewRestaurantController: UITableViewController {
         }
     }
     
+    @IBOutlet var photoImageView: UIImageView! {
+        didSet {
+            photoImageView.layer.cornerRadius = 10.0
+            photoImageView.layer.masksToBounds = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,6 +61,7 @@ class NewRestaurantController: UITableViewController {
             let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
                     let imagePicker = UIImagePickerController()
+                    imagePicker.delegate = self
                     imagePicker.allowsEditing = false
                     imagePicker.sourceType = .camera
                     self.present(imagePicker, animated: true, completion: nil)
@@ -62,6 +70,7 @@ class NewRestaurantController: UITableViewController {
             let photoLibraryAction = UIAlertAction(title: "Photo library", style: .default) { action in
                 if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                     let imagePicker = UIImagePickerController()
+                    imagePicker.delegate = self
                     imagePicker.allowsEditing = false
                     imagePicker.sourceType = .photoLibrary
                     self.present(imagePicker, animated: true, completion: nil)
@@ -90,5 +99,16 @@ extension NewRestaurantController: UITextFieldDelegate {
             nextTextField.becomeFirstResponder()
         }
         return true
+    }
+}
+
+extension NewRestaurantController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            photoImageView.image = selectedImage
+            photoImageView.contentMode = .scaleAspectFill
+            photoImageView.clipsToBounds = true
+        }
+        dismiss(animated: true, completion: nil)
     }
 }
