@@ -120,9 +120,14 @@ class RestaurantTableViewController: UITableViewController {
         }
         // delete action
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { action, sourceView, completionHandler in
-            var snapshot = self.dataSource.snapshot()
-            snapshot.deleteItems([restaurant])
-            self.dataSource.apply(snapshot, animatingDifferences: true)
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                let context = appDelegate.persistentContainer.viewContext
+                // Delete the item
+                context.delete(restaurant)
+                appDelegate.saveContext()
+                // update the view
+                self.updateSnapshot(animatingChange: true)
+            }
             // Call completion handel to dismiss the action button
             completionHandler(true)
         }
