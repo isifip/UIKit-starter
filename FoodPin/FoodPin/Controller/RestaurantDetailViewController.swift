@@ -23,6 +23,9 @@ class RestaurantDetailViewController: UIViewController {
             if let rating = Restaurant.Rating(rawValue: identifier) {
                 self.restaurant.rating = rating
                 self.headerView.ratingImageView.image = UIImage(named: rating.image)
+                if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                    appDelegate.saveContext()
+                }
             }
             let scaleTransofrm = CGAffineTransform.init(scaleX: 0.1, y: 0.1)
             self.headerView.ratingImageView.transform = scaleTransofrm
@@ -39,6 +42,10 @@ class RestaurantDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let rating = restaurant.rating {
+            headerView.ratingImageView.image = UIImage(named: rating.image)
+        }
         
         tableView.delegate = self
         tableView.dataSource = self
