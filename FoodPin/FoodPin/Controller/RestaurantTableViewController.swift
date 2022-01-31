@@ -6,8 +6,48 @@
 //
 
 import UIKit
+import CoreData
 
 class RestaurantTableViewController: UITableViewController {
+    
+    var fetchResultController: NSFetchedResultsController<Restaurant>!
+    
+    func fetchRestaurantData() {
+        // Fetch data from data store
+        let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultController = NSFetchedResultsController(
+                fetchRequest: fetchRequest,
+                managedObjectContext: context,
+                sectionNameKeyPath: nil,
+                cacheName: nil
+            )
+            fetchResultController.delegate = self
+            
+            do {
+                try fetchResultController.performFetch()
+                updateSnapshot()
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    func updateSnapshot(animatingChange: Bool = false) {
+        if let fetchedObjects = fetchResultController.fetchedObjects {
+            restaurants = fetchedObjects
+        }
+        // Create a snapshot and populate data
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Restaurant>()
+        snapshot.appendSections([.all])
+        snapshot.appendItems(restaurants, toSection: .all)
+        dataSource.apply(snapshot, animatingDifferences: animatingChange)
+        tableView.backgroundView?.isHidden = restaurants.count == 0 ? false : true
+    }
     
     // We use lazy because without its initial value cannot be
     // retrieved until after the instance initialization completes
@@ -25,6 +65,8 @@ class RestaurantTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchRestaurantData()
+        
         // Prepare EmptyView
         tableView.backgroundView = emptyRestaurantView
         tableView.backgroundView?.isHidden = restaurants.count == 0 ? false : true
@@ -36,14 +78,6 @@ class RestaurantTableViewController: UITableViewController {
         // Set up the data source of the table view
         tableView.dataSource = dataSource
         tableView.separatorStyle = .none
-        
-        
-        // Create a snapshot and populate the data
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Restaurant>()
-        snapshot.appendSections([.all])
-        snapshot.appendItems(restaurants, toSection: .all)
-        
-        dataSource.apply(snapshot, animatingDifferences: false)
         
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
@@ -151,5 +185,11 @@ class RestaurantTableViewController: UITableViewController {
                 destinationController.restaurant = self.restaurants[indexPath.row]
             }
         }
+    }
+}
+
+extension RestaurantTableViewController: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        updateSnapshot()
     }
 }
