@@ -15,6 +15,7 @@ class RestaurantTableViewController: UITableViewController {
     
     var restaurants:[Restaurant] = []
     
+    @IBOutlet var emptyRestaurantView: UIView!
     
     @IBAction func unwindToHome(segue: UIStoryboardSegue) {
         dismiss(animated: true, completion: nil)
@@ -23,6 +24,11 @@ class RestaurantTableViewController: UITableViewController {
     //MARK: --> View controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Prepare EmptyView
+        tableView.backgroundView = emptyRestaurantView
+        tableView.backgroundView?.isHidden = restaurants.count == 0 ? false : true
+        
         
         // Enable large title for navigation bar
         navigationController?.navigationBar.prefersLargeTitles = true
