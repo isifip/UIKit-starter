@@ -47,6 +47,39 @@ class NewRestaurantController: UITableViewController {
 
         
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let photoSourceRequestController = UIAlertController(title: "", message: "Choose your photo source", preferredStyle: .actionSheet)
+            let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
+                if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                    let imagePicker = UIImagePickerController()
+                    imagePicker.allowsEditing = false
+                    imagePicker.sourceType = .camera
+                    self.present(imagePicker, animated: true, completion: nil)
+                }
+            }
+            let photoLibraryAction = UIAlertAction(title: "Photo library", style: .default) { action in
+                if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                    let imagePicker = UIImagePickerController()
+                    imagePicker.allowsEditing = false
+                    imagePicker.sourceType = .photoLibrary
+                    self.present(imagePicker, animated: true, completion: nil)
+                }
+            }
+            photoSourceRequestController.addAction(cameraAction)
+            photoSourceRequestController.addAction(photoLibraryAction)
+            
+            // For iPad
+            if let popoverController = photoSourceRequestController.popoverPresentationController {
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    popoverController.sourceView = cell
+                    popoverController.sourceRect = cell.bounds
+                }
+            }
+            present(photoSourceRequestController, animated: true, completion: nil)
+        }
+    }
 
 }
 
