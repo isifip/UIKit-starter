@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class NewRestaurantController: UITableViewController {
+    
+    var restaurant: Restaurant!
     
     @IBOutlet var nameTextField: RoundedTextField! {
         didSet {
@@ -49,6 +52,7 @@ class NewRestaurantController: UITableViewController {
         }
     }
     
+    
     //MARK: --> Save button action
     @IBAction func saveButtonTapped(sender: UIButton) {
         if nameTextField.text == "" || typeTextField.text == "" || addressTextField.text == "" || phoneTextField.text == "" || descriptionTextView.text == "" {
@@ -59,11 +63,20 @@ class NewRestaurantController: UITableViewController {
             
             return
         }
-        print("Name: \(nameTextField.text ?? "")")
-        print("Type: \(typeTextField.text ?? "")")
-        print("Location: \(addressTextField.text ?? "")")
-        print("Phone: \(phoneTextField.text ?? "")")
-        print("Description: \(descriptionTextView.text ?? "")")
+        
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            restaurant = Restaurant(context: appDelegate.persistentContainer.viewContext)
+            restaurant.name = nameTextField.text!
+            restaurant.type = typeTextField.text!
+            restaurant.location = addressTextField.text!
+            restaurant.phone = phoneTextField.text!
+            restaurant.summary = descriptionTextView.text
+            if let imageData = photoImageView.image?.pngData() {
+                restaurant.image = imageData
+            }
+            print("Saving data to context")
+            appDelegate.saveContext()
+        }
         
         dismiss(animated: true, completion: nil)
     }
