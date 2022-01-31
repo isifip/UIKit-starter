@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C725FF0827A6C61F00032A33 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725FF0727A6C61F00032A33 /* ReviewViewController.swift */; };
+		C744E0DD27A8071900BD6A56 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C744E0DB27A8071900BD6A56 /* FoodPin.xcdatamodeld */; };
 		C7588EF727A2F36D000447DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7588EF627A2F36D000447DE /* AppDelegate.swift */; };
 		C7588EF927A2F36D000447DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7588EF827A2F36D000447DE /* SceneDelegate.swift */; };
 		C7588EFE27A2F36D000447DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7588EFC27A2F36D000447DE /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		C725FF0727A6C61F00032A33 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		C744E0DC27A8071900BD6A56 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
 		C7588EF327A2F36D000447DE /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7588EF627A2F36D000447DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7588EF827A2F36D000447DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				C7B62EF627A3E79600E8F6F1 /* Controller */,
 				C7B62EF527A3E79000E8F6F1 /* VIew */,
 				C7B62EF427A3E78300E8F6F1 /* Model */,
+				C744E0DB27A8071900BD6A56 /* FoodPin.xcdatamodeld */,
 				C7588EFF27A2F36F000447DE /* Assets.xcassets */,
 				C7588F0427A2F36F000447DE /* Info.plist */,
 			);
@@ -261,6 +264,7 @@
 				C7CCC77F27A556F30017E747 /* RestaurantDetailHeaderView.swift in Sources */,
 				C7588F0B27A2F6DA000447DE /* RestaurantTableViewController.swift in Sources */,
 				C7CCC78E27A5D7B10017E747 /* MapViewController.swift in Sources */,
+				C744E0DD27A8071900BD6A56 /* FoodPin.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +482,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C744E0DB27A8071900BD6A56 /* FoodPin.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C744E0DC27A8071900BD6A56 /* FoodPin.xcdatamodel */,
+			);
+			currentVersion = C744E0DC27A8071900BD6A56 /* FoodPin.xcdatamodel */;
+			path = FoodPin.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C7588EEB27A2F36D000447DE /* Project object */;
 }
