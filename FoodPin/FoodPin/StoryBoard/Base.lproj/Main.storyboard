@@ -568,7 +568,7 @@
         <!--New Restaurant-->
         <scene sceneID="Zy1-BC-7oW">
             <objects>
-                <tableViewController id="DCK-97-xby" sceneMemberID="viewController">
+                <tableViewController id="DCK-97-xby" customClass="NewRestaurantController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="rDV-jh-fmt">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="846"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -775,6 +775,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="390" height="900"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="vuW-fr-nOh" id="MCu-Ek-kFf"/>
+                        <outlet property="descriptionTextView" destination="0IM-Bw-7fl" id="zUO-tF-eks"/>
+                        <outlet property="nameTextField" destination="ATj-Fh-Ufj" id="TLF-1R-2To"/>
+                        <outlet property="phoneTextField" destination="v4g-9N-DH8" id="ejB-Jc-1fr"/>
+                        <outlet property="typeTextField" destination="V7l-pg-GgP" id="qXE-YN-dp7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkA-em-NvK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Fqf-xD-so1" userLabel="Exit" sceneMemberID="exit"/>
