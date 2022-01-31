@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -237,18 +238,6 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pc9-W3-UDB">
-                                            <rect key="frame" x="335" y="18" width="37" height="31"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="31" id="X8d-9I-aeW"/>
-                                                <constraint firstAttribute="width" constant="37" id="oFR-NC-NUI"/>
-                                            </constraints>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
-                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
-                                            </buttonConfiguration>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
@@ -257,7 +246,6 @@
                                         <constraint firstItem="jkm-oj-whG" firstAttribute="leading" secondItem="xlr-KX-SbN" secondAttribute="leading" constant="20" id="2NT-of-QTN"/>
                                         <constraint firstAttribute="trailing" secondItem="DHd-Ma-cWr" secondAttribute="trailing" id="3Qe-g5-bXY"/>
                                         <constraint firstAttribute="bottom" secondItem="jkm-oj-whG" secondAttribute="bottom" constant="20" id="B61-vQ-pI9"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Pc9-W3-UDB" secondAttribute="trailing" constant="10" id="Ccs-44-RzT"/>
                                         <constraint firstAttribute="trailing" secondItem="jkm-oj-whG" secondAttribute="trailing" constant="150" id="FER-rR-7Zf"/>
                                         <constraint firstAttribute="bottom" secondItem="PYa-2h-yzG" secondAttribute="bottom" id="FU5-0d-20B"/>
                                         <constraint firstItem="DHd-Ma-cWr" firstAttribute="leading" secondItem="xlr-KX-SbN" secondAttribute="leading" id="Pkg-mw-aMl"/>
@@ -266,11 +254,9 @@
                                         <constraint firstItem="PYa-2h-yzG" firstAttribute="top" secondItem="xlr-KX-SbN" secondAttribute="top" id="cmg-Xr-xLM"/>
                                         <constraint firstAttribute="bottom" secondItem="DHd-Ma-cWr" secondAttribute="bottom" id="dyh-SB-bC0"/>
                                         <constraint firstItem="DHd-Ma-cWr" firstAttribute="top" secondItem="xlr-KX-SbN" secondAttribute="top" id="eAd-vq-erv"/>
-                                        <constraint firstItem="Pc9-W3-UDB" firstAttribute="top" secondItem="xlr-KX-SbN" secondAttribute="topMargin" constant="10" id="vU5-ZN-IVY"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="headerImageView" destination="DHd-Ma-cWr" id="PqC-kI-Roc"/>
-                                        <outlet property="heartButton" destination="Pc9-W3-UDB" id="7BG-V7-mIu"/>
                                         <outlet property="nameLabel" destination="2TF-pA-NhM" id="Muu-w7-5HO"/>
                                         <outlet property="ratingImageView" destination="d58-eo-KDd" id="4RN-sl-gw6"/>
                                         <outlet property="typeLabel" destination="fJd-TL-RRN" id="CSh-Af-PEG"/>
@@ -427,9 +413,14 @@
                             <constraint firstItem="SCt-Hf-4hO" firstAttribute="leading" secondItem="TPJ-qa-n4q" secondAttribute="leading" id="uGl-KX-6wA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KXT-Ra-vQO"/>
+                    <navigationItem key="navigationItem" id="KXT-Ra-vQO">
+                        <barButtonItem key="rightBarButtonItem" id="3gD-Jk-cVH">
+                            <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="390" height="1200"/>
                     <connections>
+                        <outlet property="favoriteBarButton" destination="3gD-Jk-cVH" id="2dl-Jv-ZGN"/>
                         <outlet property="headerView" destination="xlr-KX-SbN" id="1Oo-Z0-9QC"/>
                         <outlet property="tableView" destination="SCt-Hf-4hO" id="Cjk-sq-xfC"/>
                     </connections>
