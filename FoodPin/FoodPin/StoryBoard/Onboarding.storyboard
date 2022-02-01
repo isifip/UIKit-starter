@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="EgF-1e-Gse">
+            <objects>
+                <pageViewController storyboardIdentifier="WalkthroughController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="EcV-Tl-GmR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lMq-SN-d2w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278" y="108"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ykv-hN-Ldi">
+            <objects>
+                <viewController id="wPo-1M-llX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8S6-0s-KQN">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCd-05-00A">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="589"/>
+                                <connections>
+                                    <segue destination="EcV-Tl-GmR" kind="embed" id="mDB-mO-jl8"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QM8-ud-gd6">
+                                <rect key="frame" x="0.0" y="588.66666666666663" width="390" height="255.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IXm-76-16c"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QM8-ud-gd6" firstAttribute="height" secondItem="IXm-76-16c" secondAttribute="height" multiplier="1:3" id="9jP-u1-ctK"/>
+                            <constraint firstAttribute="bottom" secondItem="QM8-ud-gd6" secondAttribute="bottom" id="DNS-6k-llI"/>
+                            <constraint firstItem="pCd-05-00A" firstAttribute="leading" secondItem="IXm-76-16c" secondAttribute="leading" id="HeP-HR-FVb"/>
+                            <constraint firstItem="pCd-05-00A" firstAttribute="top" secondItem="8S6-0s-KQN" secondAttribute="top" id="I7n-PY-5cP"/>
+                            <constraint firstItem="QM8-ud-gd6" firstAttribute="trailing" secondItem="IXm-76-16c" secondAttribute="trailing" id="KJP-zI-6fM"/>
+                            <constraint firstItem="pCd-05-00A" firstAttribute="trailing" secondItem="IXm-76-16c" secondAttribute="trailing" id="Sob-DP-lcP"/>
+                            <constraint firstItem="QM8-ud-gd6" firstAttribute="top" secondItem="pCd-05-00A" secondAttribute="bottom" id="Uon-3b-JnR"/>
+                            <constraint firstItem="QM8-ud-gd6" firstAttribute="leading" secondItem="IXm-76-16c" secondAttribute="leading" id="t1c-mu-efn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oz4-FM-gXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="450.76923076923077" y="106.63507109004739"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xH7-1O-KpB">
+            <objects>
+                <viewController id="pGY-Vc-VhX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y2F-8A-WbZ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8aL-oh-Zbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220" y="107"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

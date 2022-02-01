@@ -31,6 +31,7 @@
 		C7CCC78C27A5C5C40017E747 /* RestaurantDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC78B27A5C5C40017E747 /* RestaurantDetailMapCell.swift */; };
 		C7CCC78E27A5D7B10017E747 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CCC78D27A5D7B10017E747 /* MapViewController.swift */; };
 		C7D1D3E727A43068008EB8BA /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1D3E627A43068008EB8BA /* RestaurantDetailViewController.swift */; };
+		C7EA2F4427A95522001BEA26 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7EA2F4327A95522001BEA26 /* Onboarding.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		C7CCC78B27A5C5C40017E747 /* RestaurantDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailMapCell.swift; sourceTree = "<group>"; };
 		C7CCC78D27A5D7B10017E747 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C7D1D3E627A43068008EB8BA /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		C7EA2F4327A95522001BEA26 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				C7588EFC27A2F36D000447DE /* Main.storyboard */,
 				C7588F0127A2F36F000447DE /* LaunchScreen.storyboard */,
+				C7EA2F4327A95522001BEA26 /* Onboarding.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				C7CCC77D27A550440017E747 /* Nunito-Regular.ttf in Resources */,
 				C7588F0327A2F36F000447DE /* LaunchScreen.storyboard in Resources */,
 				C7588F0027A2F36F000447DE /* Assets.xcassets in Resources */,
+				C7EA2F4427A95522001BEA26 /* Onboarding.storyboard in Resources */,
 				C7CCC77C27A550440017E747 /* Nunito-Bold.ttf in Resources */,
 				C7588EFE27A2F36D000447DE /* Main.storyboard in Resources */,
 			);
