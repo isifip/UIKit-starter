@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol WalkthroughPageViewControllerDelegate: AnyObject {
+    func didUpdatePageIndex(currentIndex: Int)
+}
+
 class WalkthroughPageViewController: UIPageViewController {
 
     let pageHeadings = [
@@ -25,11 +29,15 @@ class WalkthroughPageViewController: UIPageViewController {
     
     var currentIndex = 0
     
+    weak var walkthoughDelegate: WalkthroughPageViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Set the data source to itself
         dataSource = self
+        
+        delegate = self
         
         // Create the efirst walkthrough screen
         if let startingViewController = contentViewController(at: 0) {
@@ -74,5 +82,16 @@ extension WalkthroughPageViewController: UIPageViewControllerDataSource {
             return pageContentViewController
         }
         return nil
+    }
+}
+
+extension WalkthroughPageViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            if let contentViewController = pageViewController.viewControllers?.first as? WalkthroughContentViewController {
+                currentIndex = contentViewController.index
+                walkthoughDelegate?.didUpdatePageIndex(currentIndex: contentViewController.index)
+            }
+        }
     }
 }
