@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C725FF0827A6C61F00032A33 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725FF0727A6C61F00032A33 /* ReviewViewController.swift */; };
 		C744E0DD27A8071900BD6A56 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C744E0DB27A8071900BD6A56 /* FoodPin.xcdatamodeld */; };
+		C74BB39C27A947110038B29E /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BB39B27A947110038B29E /* TutorialView.swift */; };
 		C7588EF727A2F36D000447DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7588EF627A2F36D000447DE /* AppDelegate.swift */; };
 		C7588EF927A2F36D000447DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7588EF827A2F36D000447DE /* SceneDelegate.swift */; };
 		C7588EFE27A2F36D000447DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7588EFC27A2F36D000447DE /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		C725FF0727A6C61F00032A33 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		C744E0DC27A8071900BD6A56 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
+		C74BB39B27A947110038B29E /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		C7588EF327A2F36D000447DE /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7588EF627A2F36D000447DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7588EF827A2F36D000447DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				C7CCC78227A57A4D0017E747 /* RestaurantDetailTwoColumnCell.swift */,
 				C7CCC78B27A5C5C40017E747 /* RestaurantDetailMapCell.swift */,
 				C7AFF48A27A7DCCF0021DEE1 /* RoundedTextField.swift */,
+				C74BB39B27A947110038B29E /* TutorialView.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				C7AFF48D27A7DF780021DEE1 /* NewRestaurantController.swift in Sources */,
 				C725FF0827A6C61F00032A33 /* ReviewViewController.swift in Sources */,
 				C7CCC78127A563C80017E747 /* RestaurantDetailTextCell.swift in Sources */,
+				C74BB39C27A947110038B29E /* TutorialView.swift in Sources */,
 				C7588F0D27A30083000447DE /* RestaurantTableViewCell.swift in Sources */,
 				C7588EF727A2F36D000447DE /* AppDelegate.swift in Sources */,
 				C7CCC78327A57A4D0017E747 /* RestaurantDetailTwoColumnCell.swift in Sources */,
