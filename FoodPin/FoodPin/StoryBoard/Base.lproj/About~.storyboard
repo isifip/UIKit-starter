@@ -459,6 +459,98 @@
             </objects>
             <point key="canvasLocation" x="3386.1538461538462" y="139.33649289099526"/>
         </scene>
+        <!--Discover-->
+        <scene sceneID="1f4-zr-c5V">
+            <objects>
+                <tableViewController id="aRC-pc-UdQ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="q28-h2-4eI">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hrX-eh-fAR">
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hrX-eh-fAR" id="WBN-9Z-tlb">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aRC-pc-UdQ" id="WCO-My-QXY"/>
+                            <outlet property="delegate" destination="aRC-pc-UdQ" id="zLP-4r-oaP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Discover" id="EcH-3H-JVz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1f6-eS-UEg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1635" y="981"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="dNO-SL-aGX">
+            <objects>
+                <tableViewController id="X0B-Pd-BTr" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="JBT-yC-M2u">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cjp-bR-qbr">
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cjp-bR-qbr" id="14m-Da-dSr">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="X0B-Pd-BTr" id="eg7-9P-yuJ"/>
+                            <outlet property="delegate" destination="X0B-Pd-BTr" id="Gsz-6M-odP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="About" id="mlW-0d-AhR"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5tc-6s-MLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-192" y="980"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="60o-AZ-QZj">
+            <objects>
+                <navigationController id="RM8-ay-tz0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About" image="square.stack" catalog="system" id="4St-GU-Wra"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wc3-jf-yfj">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="X0B-Pd-BTr" kind="relationship" relationship="rootViewController" id="z1u-46-yhO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2vB-pw-lTV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1091" y="980"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="3er-8X-1ks">
+            <objects>
+                <navigationController id="Sgg-Yv-hZC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discover" image="wand.and.rays" catalog="system" id="jfo-LL-mxs"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JN0-K9-rh2">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aRC-pc-UdQ" kind="relationship" relationship="rootViewController" id="I5h-by-lym"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCG-va-zqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="706" y="980"/>
+        </scene>
         <!--Review View Controller-->
         <scene sceneID="E3F-ja-7fA">
             <objects>
@@ -843,33 +935,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="zrb-yE-AQR" kind="relationship" relationship="viewControllers" id="qwc-MU-FD7"/>
-                        <segue destination="TBT-bZ-Faw" kind="relationship" relationship="viewControllers" id="JlF-na-8wa"/>
-                        <segue destination="i6e-WT-2DF" kind="relationship" relationship="viewControllers" id="Yiz-GP-DKs"/>
+                        <segue destination="Sgg-Yv-hZC" kind="relationship" relationship="viewControllers" id="JlF-na-8wa"/>
+                        <segue destination="RM8-ay-tz0" kind="relationship" relationship="viewControllers" id="Yiz-GP-DKs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WbW-Pb-0Mf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-221.53846153846152" y="95.97156398104265"/>
-        </scene>
-        <!--About-->
-        <scene sceneID="tIE-ZZ-kVG">
-            <objects>
-                <viewControllerPlaceholder storyboardName="About" id="i6e-WT-2DF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Iry-aX-ETP"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yyz-6M-8bm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1091" y="980"/>
-        </scene>
-        <!--Discover-->
-        <scene sceneID="gKT-4F-8jw">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Discover" id="TBT-bZ-Faw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dkd-k2-Cs6"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IYo-Ob-Fba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="706" y="980"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -886,7 +958,9 @@
         <image name="newphoto" width="1840" height="1380"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="sad" width="78" height="87"/>
+        <image name="square.stack" catalog="system" width="113" height="128"/>
         <image name="tag.fill" catalog="system" width="128" height="119"/>
+        <image name="wand.and.rays" catalog="system" width="128" height="121"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="NavigationBarTitle">
             <color red="0.85490196078431369" green="0.37647058823529411" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

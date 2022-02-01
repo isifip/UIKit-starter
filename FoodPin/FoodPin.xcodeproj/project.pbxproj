@@ -35,6 +35,8 @@
 		C7EA2F4627A9689A001BEA26 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA2F4527A9689A001BEA26 /* WalkthroughContentViewController.swift */; };
 		C7EA2F4827A96A4B001BEA26 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA2F4727A96A4B001BEA26 /* WalkthroughPageViewController.swift */; };
 		C7EA2F4A27A97095001BEA26 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA2F4927A97095001BEA26 /* WalkthroughViewController.swift */; };
+		C7EA2F4D27A9AAF7001BEA26 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7EA2F4B27A9AAF7001BEA26 /* About.storyboard */; };
+		C7EA2F4F27A9AB1D001BEA26 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7EA2F4E27A9AB1D001BEA26 /* Discover.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		C7EA2F4527A9689A001BEA26 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		C7EA2F4727A96A4B001BEA26 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		C7EA2F4927A97095001BEA26 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
+		C7EA2F4C27A9AAF7001BEA26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FoodPin/StoryBoard/Base.lproj/About.storyboard; sourceTree = "<group>"; };
+		C7EA2F4E27A9AB1D001BEA26 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 			children = (
 				C7588EFC27A2F36D000447DE /* Main.storyboard */,
 				C7588F0127A2F36F000447DE /* LaunchScreen.storyboard */,
+				C7EA2F4B27A9AAF7001BEA26 /* About.storyboard */,
+				C7EA2F4E27A9AB1D001BEA26 /* Discover.storyboard */,
 				C7EA2F4327A95522001BEA26 /* Onboarding.storyboard */,
 			);
 			path = StoryBoard;
@@ -248,6 +254,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7CCC77D27A550440017E747 /* Nunito-Regular.ttf in Resources */,
+				C7EA2F4F27A9AB1D001BEA26 /* Discover.storyboard in Resources */,
+				C7EA2F4D27A9AAF7001BEA26 /* About.storyboard in Resources */,
 				C7588F0327A2F36F000447DE /* LaunchScreen.storyboard in Resources */,
 				C7588F0027A2F36F000447DE /* Assets.xcassets in Resources */,
 				C7EA2F4427A95522001BEA26 /* Onboarding.storyboard in Resources */,
@@ -305,6 +313,14 @@
 				C7588F0227A2F36F000447DE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C7EA2F4B27A9AAF7001BEA26 /* About.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7EA2F4C27A9AAF7001BEA26 /* Base */,
+			);
+			name = About.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
