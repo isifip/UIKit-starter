@@ -19,11 +19,16 @@ class RestaurantTableViewController: UITableViewController {
     
     @IBOutlet var emptyRestaurantView: UIView!
     
+    var searchController: UISearchController!
+    
     
     
     //MARK: --> View controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController = UISearchController(searchResultsController: nil)
+        self.navigationItem.searchController = searchController
         
         fetchRestaurantData()
         
