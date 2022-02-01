@@ -28,9 +28,11 @@ class RestaurantTableViewController: UITableViewController {
         super.viewDidLoad()
         
         searchController = UISearchController(searchResultsController: nil)
-        self.navigationItem.searchController = searchController
+        tableView.tableHeaderView = searchController.searchBar
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.backgroundImage = UIImage()
         
         fetchRestaurantData()
         
@@ -175,6 +177,7 @@ class RestaurantTableViewController: UITableViewController {
         
         if !searchText.isEmpty {
             fetchRequest.predicate = NSPredicate(format: "name CONTAINS[c] %@", searchText)
+            fetchRequest.predicate = NSPredicate(format: "location CONTAINS[c] %@", searchText)
         }
         
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
