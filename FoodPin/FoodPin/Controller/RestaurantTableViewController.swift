@@ -29,6 +29,8 @@ class RestaurantTableViewController: UITableViewController {
         
         searchController = UISearchController(searchResultsController: nil)
         self.navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
         
         fetchRestaurantData()
         
@@ -78,6 +80,11 @@ class RestaurantTableViewController: UITableViewController {
     
     //MARK: --> Right Swipe Actions
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        if searchController.isActive {
+            return UISwipeActionsConfiguration()
+        }
+        
         // selected restaurant
         guard let restaurant = self.dataSource.itemIdentifier(for: indexPath) else {
             return UISwipeActionsConfiguration()
@@ -162,9 +169,14 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     //MARK: --> Core Data
-    func fetchRestaurantData() {
+    func fetchRestaurantData(searchText: String = "") {
         // Fetch data from data store
         let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+        
+        if !searchText.isEmpty {
+            fetchRequest.predicate = NSPredicate(format: "name CONTAINS[c] %@", searchText)
+        }
+        
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
@@ -180,7 +192,7 @@ class RestaurantTableViewController: UITableViewController {
             
             do {
                 try fetchResultController.performFetch()
-                updateSnapshot()
+                updateSnapshot(animatingChange: searchText.isEmpty ? false : true)
             } catch {
                 print(error)
             }
@@ -203,5 +215,14 @@ class RestaurantTableViewController: UITableViewController {
 extension RestaurantTableViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         updateSnapshot()
+    }
+}
+
+extension RestaurantTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else {
+            return
+        }
+        fetchRestaurantData(searchText: searchText)
     }
 }
