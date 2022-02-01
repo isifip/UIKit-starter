@@ -34,6 +34,7 @@
 		C7EA2F4427A95522001BEA26 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7EA2F4327A95522001BEA26 /* Onboarding.storyboard */; };
 		C7EA2F4627A9689A001BEA26 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA2F4527A9689A001BEA26 /* WalkthroughContentViewController.swift */; };
 		C7EA2F4827A96A4B001BEA26 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA2F4727A96A4B001BEA26 /* WalkthroughPageViewController.swift */; };
+		C7EA2F4A27A97095001BEA26 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA2F4927A97095001BEA26 /* WalkthroughViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		C7EA2F4327A95522001BEA26 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		C7EA2F4527A9689A001BEA26 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		C7EA2F4727A96A4B001BEA26 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		C7EA2F4927A97095001BEA26 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				C7AFF48C27A7DF780021DEE1 /* NewRestaurantController.swift */,
 				C7EA2F4527A9689A001BEA26 /* WalkthroughContentViewController.swift */,
 				C7EA2F4727A96A4B001BEA26 /* WalkthroughPageViewController.swift */,
+				C7EA2F4927A97095001BEA26 /* WalkthroughViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				C7588F0B27A2F6DA000447DE /* RestaurantTableViewController.swift in Sources */,
 				C7CCC78E27A5D7B10017E747 /* MapViewController.swift in Sources */,
 				C744E0DD27A8071900BD6A56 /* FoodPin.xcdatamodeld in Sources */,
+				C7EA2F4A27A97095001BEA26 /* WalkthroughViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
