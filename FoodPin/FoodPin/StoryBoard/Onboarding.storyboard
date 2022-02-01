@@ -16,16 +16,16 @@
             </objects>
             <point key="canvasLocation" x="-278" y="108"/>
         </scene>
-        <!--View Controller-->
+        <!--Walkthrough View Controller-->
         <scene sceneID="Ykv-hN-Ldi">
             <objects>
-                <viewController id="wPo-1M-llX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkthroughViewController" id="wPo-1M-llX" customClass="WalkthroughViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8S6-0s-KQN">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCd-05-00A">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="588.66666666666663"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="589"/>
                                 <connections>
                                     <segue destination="EcV-Tl-GmR" kind="embed" id="mDB-mO-jl8"/>
                                 </connections>
@@ -85,6 +85,11 @@
                             <constraint firstItem="QM8-ud-gd6" firstAttribute="leading" secondItem="IXm-76-16c" secondAttribute="leading" id="t1c-mu-efn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nextButton" destination="NNJ-In-5na" id="iDo-J1-plf"/>
+                        <outlet property="pageControl" destination="TiV-Hh-h9k" id="dJ1-Y2-YVz"/>
+                        <outlet property="skipButton" destination="Cbi-5S-mxq" id="OYf-pG-baI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oz4-FM-gXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,7 +98,7 @@
         <!--Walkthrough Content View Controller-->
         <scene sceneID="xH7-1O-KpB">
             <objects>
-                <viewController id="pGY-Vc-VhX" customClass="WalkthroughContentViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkthroughContentViewController" id="pGY-Vc-VhX" customClass="WalkthroughContentViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y2F-8A-WbZ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
