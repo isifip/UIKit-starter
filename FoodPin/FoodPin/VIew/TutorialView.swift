@@ -9,6 +9,9 @@ import SwiftUI
 
 struct TutorialView: View {
     
+    @State private var currentPage = 0
+    @Environment(\.dismiss) var dismiss
+    
     let pageHeadings = [
         "Create your own food guide",
         "Show your the location",
@@ -29,25 +32,57 @@ struct TutorialView: View {
     }
     
     var body: some View {
-        TabView {
-            ForEach(pageHeadings.indices) { index in
-                TutorialPage(
-                    image: pageImages[index],
-                    heading: pageHeadings[index].uppercased(),
-                    subHeading: pageSubHeadings[index])
-                    .tag(index)
+        VStack {
+            TabView(selection: $currentPage) {
+                ForEach(pageHeadings.indices) { index in
+                    TutorialPage(
+                        image: pageImages[index],
+                        heading: pageHeadings[index].uppercased(),
+                        subHeading: pageSubHeadings[index])
+                        .tag(index)
+                }
             }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .automatic))
+            .animation(.default, value: currentPage)
+            VStack(spacing: 20) {
+                Button {
+                    if currentPage < pageHeadings.count - 1 {
+                        currentPage += 1
+                    } else {
+                        dismiss()
+                    }
+                } label: {
+                    Text(currentPage == pageHeadings.count - 1 ? "GET STARTED" : "NEXT")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .padding(.horizontal, 50)
+                        .background(Color.indigo)
+                        .cornerRadius(25)
+                        .shadow(radius: 20)
+                }
+                if currentPage < pageHeadings.count - 1 {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Skip")
+                            .font(.headline)
+                            .foregroundColor(Color.secondary)
+                    }
+
+                }
+            }
+            .padding(.bottom)
         }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .automatic))
     }
 }
 
-struct TutorialView_Previews: PreviewProvider {
-    static var previews: some View {
-        TutorialView()
-    }
-}
+//struct TutorialView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TutorialView()
+//    }
+//}
 
 struct TutorialPage: View {
     
