@@ -57,6 +57,15 @@ class AboutTableViewController: UITableViewController {
         tableView.dataSource = dataSource
         updateSnapshot()
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Get the selected link item
+        guard let linkItem = self.dataSource.itemIdentifier(for: indexPath) else { return }
+        if let url = URL(string: linkItem.link) {
+            UIApplication.shared.open(url)
+        }
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
 
     // MARK: - Table view data source
     func configureDataSource() -> UITableViewDiffableDataSource<Section, LinkItem> {
