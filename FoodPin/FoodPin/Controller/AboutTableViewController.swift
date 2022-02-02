@@ -28,7 +28,7 @@ class AboutTableViewController: UITableViewController {
                 image: "store"),
             LinkItem(
                 text: "Tell us your feedback",
-                link: "http://www.appcoda.com/contact",
+                link: "https://www.appcoda.com/contact",
                 image: "chat")
         ],
         [
@@ -60,11 +60,20 @@ class AboutTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Get the selected link item
-        guard let linkItem = self.dataSource.itemIdentifier(for: indexPath) else { return }
-        if let url = URL(string: linkItem.link) {
-            UIApplication.shared.open(url)
-        }
+        
+        performSegue(withIdentifier: "showWebView", sender: self)
         tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showWebView" {
+            if
+                let destinationController = segue.destination as? WebViewController,
+                let indexPath = tableView.indexPathForSelectedRow,
+                let linkItem = self.dataSource.itemIdentifier(for: indexPath) {
+                destinationController.targetURL = linkItem.link
+            }
+        }
     }
 
     // MARK: - Table view data source

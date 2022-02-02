@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,10 +57,47 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="About" id="mlW-0d-AhR"/>
+                    <connections>
+                        <segue destination="jqO-QG-mcE" kind="presentation" identifier="showWebView" id="Q7P-jg-i2B"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tc-6s-MLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-192" y="980"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="dj5-Wf-Tdj">
+            <objects>
+                <viewController id="jqO-QG-mcE" customClass="WebViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EuQ-2u-4XA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JbW-bz-pbq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jzk-iF-zpg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JbW-bz-pbq" firstAttribute="trailing" secondItem="Jzk-iF-zpg" secondAttribute="trailing" id="0kB-38-aXG"/>
+                            <constraint firstItem="JbW-bz-pbq" firstAttribute="top" secondItem="EuQ-2u-4XA" secondAttribute="top" id="G7r-O1-QWI"/>
+                            <constraint firstAttribute="bottom" secondItem="JbW-bz-pbq" secondAttribute="bottom" id="HC6-RT-tDH"/>
+                            <constraint firstItem="JbW-bz-pbq" firstAttribute="leading" secondItem="Jzk-iF-zpg" secondAttribute="leading" id="bMA-R6-oIP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="JbW-bz-pbq" id="BTh-4n-Yin"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQd-eS-BaB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565.21739130434787" y="979.6875"/>
         </scene>
         <!--About-->
         <scene sceneID="60o-AZ-QZj">
