@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class AboutTableViewController: UITableViewController {
     
@@ -60,8 +61,9 @@ class AboutTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Get the selected link item
+    
+        openWithSafariViewController(indexPath: indexPath)
         
-        performSegue(withIdentifier: "showWebView", sender: self)
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
@@ -96,6 +98,15 @@ class AboutTableViewController: UITableViewController {
         snapshot.appendItems(sectionContent[1], toSection: .followus)
         
         dataSource.apply(snapshot, animatingDifferences: false)
+    }
+
+    func openWithSafariViewController(indexPath: IndexPath) {
+        guard let linkItem = self.dataSource.itemIdentifier(for: indexPath) else { return }
+        
+        if let url = URL(string: linkItem.link) {
+            let safariController = SFSafariViewController(url: url)
+            present(safariController, animated: true, completion: nil)
+        }
     }
 
 }
