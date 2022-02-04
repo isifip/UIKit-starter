@@ -16,24 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tshirt" translatesAutoresizingMaskIntoConstraints="NO" id="ylP-Rx-N94">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="490"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tshirt" translatesAutoresizingMaskIntoConstraints="NO" id="ylP-Rx-N94">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="493.66666666666669"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NKI-Rn-o7C">
-                                <rect key="frame" x="0.0" y="490" width="390" height="354"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKI-Rn-o7C">
+                                <rect key="frame" x="0.0" y="493.66666666666674" width="390" height="350.33333333333326"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PSD T-Shirt Mockup Template" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjI-cd-j5g">
-                                        <rect key="frame" x="15" y="20" width="335" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PSD T-Shirt Mockup Template" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjI-cd-j5g">
+                                        <rect key="frame" x="15" y="15" width="360" height="35"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVJ-GG-kOe">
-                                        <rect key="frame" x="15" y="63" width="344" height="215"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVJ-GG-kOe">
+                                        <rect key="frame" x="15" y="59.999999999999943" width="360" height="275.33333333333331"/>
                                         <string key="text">This is a free psd T-shirt mockup provided by pixeden.com. The PSD comes with a plain simple tee-shirt mockup template. You can edit the t-shirt color and use the smart layer to apply your designs. The high-resolution makes it easy to frame specific details with close-ups.</string>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                         <nil key="textColor"/>
@@ -41,10 +37,29 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="xjI-cd-j5g" firstAttribute="leading" secondItem="NKI-Rn-o7C" secondAttribute="leading" constant="15" id="0Ac-6p-GXg"/>
+                                    <constraint firstAttribute="bottom" secondItem="bVJ-GG-kOe" secondAttribute="bottom" constant="15" id="8Dl-VB-ZXn"/>
+                                    <constraint firstItem="bVJ-GG-kOe" firstAttribute="top" secondItem="xjI-cd-j5g" secondAttribute="bottom" constant="10" id="T4U-M1-RHn"/>
+                                    <constraint firstAttribute="trailing" secondItem="xjI-cd-j5g" secondAttribute="trailing" constant="15" id="U9m-E0-PLq"/>
+                                    <constraint firstAttribute="trailing" secondItem="bVJ-GG-kOe" secondAttribute="trailing" constant="15" id="VxJ-hM-fae"/>
+                                    <constraint firstItem="bVJ-GG-kOe" firstAttribute="leading" secondItem="NKI-Rn-o7C" secondAttribute="leading" constant="15" id="baS-Fl-Eli"/>
+                                    <constraint firstItem="xjI-cd-j5g" firstAttribute="top" secondItem="NKI-Rn-o7C" secondAttribute="top" constant="15" id="xD3-AC-SZl"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="NKI-Rn-o7C" secondAttribute="bottom" id="73v-65-YDa"/>
+                            <constraint firstItem="NKI-Rn-o7C" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7gD-Dl-jnD"/>
+                            <constraint firstItem="ylP-Rx-N94" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.585" id="Hru-T5-t7V"/>
+                            <constraint firstItem="ylP-Rx-N94" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UEC-wG-esk"/>
+                            <constraint firstItem="NKI-Rn-o7C" firstAttribute="top" secondItem="ylP-Rx-N94" secondAttribute="bottom" id="fI9-I5-xeI"/>
+                            <constraint firstItem="NKI-Rn-o7C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jbR-i9-x2l"/>
+                            <constraint firstItem="ylP-Rx-N94" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qBj-h0-5fu"/>
+                            <constraint firstItem="ylP-Rx-N94" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wpC-sd-Td2"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
