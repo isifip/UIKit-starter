@@ -55,7 +55,10 @@ class HomeViewController: UIViewController {
 //                print(error)
 //            }
 //        }
-        APICaller.shared.getTrendingTVs { results in
+//        APICaller.shared.getTrendingTVs { results in
+//            //
+//        }
+        APICaller.shared.getUpcomingMovies { results in
             //
         }
     }
