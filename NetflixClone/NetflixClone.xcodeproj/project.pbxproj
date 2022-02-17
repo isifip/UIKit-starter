@@ -17,6 +17,7 @@
 		C7ADDF2E27BE5CE300E0328D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ADDF2D27BE5CE300E0328D /* SearchViewController.swift */; };
 		C7ADDF3027BE5CFC00E0328D /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ADDF2F27BE5CFC00E0328D /* DownloadsViewController.swift */; };
 		C7ADDF3727BE619F00E0328D /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ADDF3627BE619F00E0328D /* CollectionTableViewCell.swift */; };
+		C7ADDF3927BE67C000E0328D /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ADDF3827BE67C000E0328D /* HeroHeaderUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C7ADDF2D27BE5CE300E0328D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C7ADDF2F27BE5CFC00E0328D /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		C7ADDF3627BE619F00E0328D /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		C7ADDF3827BE67C000E0328D /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				C7ADDF3627BE619F00E0328D /* CollectionTableViewCell.swift */,
+				C7ADDF3827BE67C000E0328D /* HeroHeaderUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				C7ADDF2E27BE5CE300E0328D /* SearchViewController.swift in Sources */,
 				C7ADDF1927BE5B6200E0328D /* MainTabViewController.swift in Sources */,
 				C7ADDF3027BE5CFC00E0328D /* DownloadsViewController.swift in Sources */,
+				C7ADDF3927BE67C000E0328D /* HeroHeaderUIView.swift in Sources */,
 				C7ADDF1527BE5B6200E0328D /* AppDelegate.swift in Sources */,
 				C7ADDF1727BE5B6200E0328D /* SceneDelegate.swift in Sources */,
 				C7ADDF2C27BE5CCD00E0328D /* UpcomingViewController.swift in Sources */,
