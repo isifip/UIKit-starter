@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct TrendingMoviesResponse: Codable {
-    let results: [Movie]
+struct TrendingTitleResponse: Codable {
+    let results: [Title]
     
     enum CodingKeys: String, CodingKey{
         case results
     }
 }
 
-struct Movie: Codable {
+struct Title: Codable {
     let id: Int
     let mediaType: String?
     let originalName: String?
