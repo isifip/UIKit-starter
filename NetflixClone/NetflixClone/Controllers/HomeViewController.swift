@@ -47,14 +47,14 @@ class HomeViewController: UIViewController {
     }
     
     private func FetchData() {
-//        APICaller.shared.getTrendingMovies { results in
-//            switch results {
-//            case .success(let movies):
-//                print(movies)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
+        APICaller.shared.getTrendingMovies { results in
+            switch results {
+            case .success(let movies):
+                print(movies)
+            case .failure(let error):
+                print(error)
+            }
+        }
 //        APICaller.shared.getTrendingTVs { results in
 //            //
 //        }

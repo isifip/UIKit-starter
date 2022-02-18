@@ -10,6 +10,8 @@ import Foundation
 struct Constants {
     static let API_KEY = ""
     static let baseURL = "https://api.themoviedb.org"
+    
+    // https://api.themoviedb.org/3/trending/all/day?api_key=697d439ac993538da4e3e60b54e762cd
 }
 
 enum APIError: Error {
@@ -22,7 +24,7 @@ class APICaller {
     
     //MARK: --> Trenging MOVIES
     func getTrendingMovies(completion: @escaping (Result<[Movie], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.baseURL)/3/movie/upcoming/?api_key=\(Constants.API_KEY)") else { return }
+        guard let url = URL(string: "\(Constants.baseURL)/3/trending/all/day?api_key=\(Constants.API_KEY)") else { return }
         
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else {

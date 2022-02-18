@@ -9,16 +9,32 @@ import Foundation
 
 struct TrendingTVResponse: Codable {
     let results: [TV]
+    enum CodingKeys: String, CodingKey{
+        case results
+    }
 }
 
 struct TV: Codable {
     let id: Int
-    let media_type: String?
-    let original_name: String?
-    let original_title: String?
-    let poste_path: String?
+    let mediaType: String?
+    let originalName: String?
+    let originalTitle: String?
+    let posterPath: String?
     let overview: String?
-    let vote_count: Int
-    let release_date: String?
-    let vote_avarage: Double
+    let voteCount: Int
+    let releaseDate: String?
+    let voteAvarage: Double?
+    
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case mediaType = "media_type"
+        case originalName = "original_name"
+        case originalTitle = "original_title"
+        case posterPath = "poster_path"
+        case overview
+        case voteCount = "vote_count"
+        case releaseDate = "release_date"
+        case voteAvarage = "vote_avarage"
+    }
 }
