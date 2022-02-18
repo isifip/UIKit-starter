@@ -31,6 +31,8 @@ class SearchViewController: UIViewController {
         
         discoverTable.delegate = self
         discoverTable.dataSource = self
+        
+        fetchDiscoverMovies()
     }
     
     override func viewDidLayoutSubviews() {
@@ -38,19 +40,43 @@ class SearchViewController: UIViewController {
         
         discoverTable.frame = view.bounds
     }
+    
+    
+    private func fetchDiscoverMovies() {
+        APICaller.shared.getDiscoverMovies { [weak self] result in
+            switch result {
+            case .success(let titles):
+                self?.titles = titles
+                DispatchQueue.main.async {
+                    self?.discoverTable.reloadData()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 
 }
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return titles.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else {
             return UITableViewCell()
         }
         
+        let title = titles[indexPath.row]
+        let model = TitleViewModel(titleName: title.originalName ?? title.originalTitle ?? "Unknown name", posterURL: title.posterPath ?? "")
+        
+        cell.configure(with: model)
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
 }
 
