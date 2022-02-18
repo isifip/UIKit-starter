@@ -46,21 +46,50 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .white
     }
     
+    
+    //MARK: --> Test function
     private func FetchData() {
-        APICaller.shared.getTrendingMovies { results in
+//        APICaller.shared.getTrendingMovies { results in
+//            switch results {
+//            case .success(let movies):
+//                print(movies)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//        APICaller.shared.getTrendingTVs { results in
+//            switch results {
+//            case .success(let movies):
+//                print(movies)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//        APICaller.shared.getUpcomingMovies { results in
+//            switch results {
+//            case .success(let movies):
+//                print(movies)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//        APICaller.shared.getPopular { results in
+//            switch results {
+//            case .success(let movies):
+//                print(movies)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+        APICaller.shared.getTopRated { results in
             switch results {
             case .success(let movies):
+                print("TOP RATED!!!!")
                 print(movies)
             case .failure(let error):
                 print(error)
             }
         }
-//        APICaller.shared.getTrendingTVs { results in
-//            //
-//        }
-//        APICaller.shared.getUpcomingMovies { results in
-//            //
-//        }
     }
     
     
