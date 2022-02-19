@@ -33,6 +33,7 @@ class SearchViewController: UIViewController {
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         
         navigationItem.searchController = searchController
+        navigationController?.navigationBar.tintColor = .white
 
         view.backgroundColor = .systemBackground
         
