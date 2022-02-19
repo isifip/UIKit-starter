@@ -53,6 +53,9 @@ class HomeViewController: UIViewController {
             
         ]
         navigationController?.navigationBar.tintColor = .white
+        
+        
+        
     }
 
     
@@ -79,6 +82,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as? CollectionTableViewCell else {
             return UITableViewCell()
         }
+        
+        cell.delegate = self
         
         switch indexPath.section {
         case Sections.TrendingMovies.rawValue:
@@ -159,5 +164,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let offset = scrollView.contentOffset.y + defaultOffset
         
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
+    }
+}
+
+
+extension HomeViewController: CollectionTableViewCellDelegate {
+    func collectionViewTableViewCelldidTapCell(_ cell: CollectionTableViewCell, viewModel: titlePreviewViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            let vc = TitlePreviewViewController()
+            
+            vc.configure(with: viewModel)
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+
     }
 }
