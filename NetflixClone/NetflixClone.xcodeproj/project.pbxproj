@@ -14,6 +14,7 @@
 		C75BC0BF27BFF46A0016E8D5 /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75BC0BE27BFF46A0016E8D5 /* TitleViewModel.swift */; };
 		C7AA1A9A27C1079900031BBD /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA1A9927C1079900031BBD /* SearchResultsViewController.swift */; };
 		C7AA1A9E27C11F0300031BBD /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA1A9D27C11F0300031BBD /* YoutubeSearchResponse.swift */; };
+		C7AA1AA027C1261600031BBD /* TitlePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA1A9F27C1261600031BBD /* TitlePreviewViewController.swift */; };
 		C7ADDF1527BE5B6200E0328D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ADDF1427BE5B6200E0328D /* AppDelegate.swift */; };
 		C7ADDF1727BE5B6200E0328D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ADDF1627BE5B6200E0328D /* SceneDelegate.swift */; };
 		C7ADDF1927BE5B6200E0328D /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ADDF1827BE5B6200E0328D /* MainTabViewController.swift */; };
@@ -37,6 +38,7 @@
 		C75BC0BE27BFF46A0016E8D5 /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
 		C7AA1A9927C1079900031BBD /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		C7AA1A9D27C11F0300031BBD /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
+		C7AA1A9F27C1261600031BBD /* TitlePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewController.swift; sourceTree = "<group>"; };
 		C7ADDF1127BE5B6200E0328D /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7ADDF1427BE5B6200E0328D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7ADDF1627BE5B6200E0328D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				C7AA1A9927C1079900031BBD /* SearchResultsViewController.swift */,
+				C7AA1A9F27C1261600031BBD /* TitlePreviewViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				C7ADDF3927BE67C000E0328D /* HeroHeaderUIView.swift in Sources */,
 				C7ADDF1527BE5B6200E0328D /* AppDelegate.swift in Sources */,
 				C75BC0B627BFDC280016E8D5 /* TitleCollectionViewCell.swift in Sources */,
+				C7AA1AA027C1261600031BBD /* TitlePreviewViewController.swift in Sources */,
 				C7ADDF1727BE5B6200E0328D /* SceneDelegate.swift in Sources */,
 				C7ADDF3F27BE8E6A00E0328D /* Extensions.swift in Sources */,
 				C75BC0BD27BFED310016E8D5 /* TitleTableViewCell.swift in Sources */,
