@@ -117,4 +117,6 @@ extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDat
         }
         return config
     }
+    
+    
 }
