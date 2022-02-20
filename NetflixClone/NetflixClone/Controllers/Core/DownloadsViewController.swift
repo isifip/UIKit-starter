@@ -26,11 +26,33 @@ class DownloadsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         
+        view.addSubview(DownloadedTable)
         
         DownloadedTable.delegate = self
         DownloadedTable.dataSource = self
+        
+        fetchLocalStorageForDownload()
     }
 
+    
+    private func fetchLocalStorageForDownload() {
+        DataPersistenceManager.shared.fetchingTitlesFromDataBase { [weak self] result in
+            switch result {
+            case .success(let titles):
+                self?.titles = titles
+                DispatchQueue.main.async {
+                    self?.DownloadedTable.reloadData()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        DownloadedTable.frame = view.bounds
+    }
 }
 
 
