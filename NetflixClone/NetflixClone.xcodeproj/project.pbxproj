@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C73F26CB27C2968D0070EA0C /* NetflixCloneModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C73F26C927C2968D0070EA0C /* NetflixCloneModel.xcdatamodeld */; };
+		C742D6CF27C29DDA001A7F97 /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742D6CE27C29DDA001A7F97 /* DataPersistenceManager.swift */; };
 		C75BC0B627BFDC280016E8D5 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75BC0B527BFDC280016E8D5 /* TitleCollectionViewCell.swift */; };
 		C75BC0B927BFDF630016E8D5 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = C75BC0B827BFDF630016E8D5 /* SDWebImage */; };
 		C75BC0BB27BFDF630016E8D5 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C75BC0BA27BFDF630016E8D5 /* SDWebImageMapKit */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		C73F26CA27C2968D0070EA0C /* NetflixCloneModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NetflixCloneModel.xcdatamodel; sourceTree = "<group>"; };
+		C742D6CE27C29DDA001A7F97 /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 		C75BC0B527BFDC280016E8D5 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		C75BC0BC27BFED310016E8D5 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		C75BC0BE27BFF46A0016E8D5 /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				C7ADDF3A27BE829A00E0328D /* APICaller.swift */,
+				C742D6CE27C29DDA001A7F97 /* DataPersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				C7ADDF3D27BE86F100E0328D /* Title.swift in Sources */,
 				C7AA1AA227C12D8900031BBD /* TitlePreviewViewModel.swift in Sources */,
 				C7ADDF3727BE619F00E0328D /* CollectionTableViewCell.swift in Sources */,
+				C742D6CF27C29DDA001A7F97 /* DataPersistenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
