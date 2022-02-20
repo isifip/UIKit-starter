@@ -57,7 +57,7 @@ class CollectionTableViewCell: UITableViewCell {
     }
     
     private func downloadTitle(at indexPath: IndexPath){
-        print("Donwloading \(titles[indexPath.row].originalTitle!)")
+        //
     }
     
 }
