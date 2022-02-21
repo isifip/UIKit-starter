@@ -39,7 +39,7 @@ class ViewController: UIViewController {
 
         view.backgroundColor = .systemBackground
         
-        view.addSubview(BlobImageView)
+        //view.addSubview(BlobImageView)
         view.addSubview(descriptionTextView)
 
         setUpLayout()
@@ -47,32 +47,36 @@ class ViewController: UIViewController {
     }
     
     private func setUpLayout() {
-        let topImageContainerView = UIView()
-        topImageContainerView.backgroundColor = .blue
-        topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(topImageContainerView)
+        
+        let topImageContainerView: UIView = {
+            let container = UIView()
+            container.backgroundColor = .blue
+            container.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(container)
+            
+            container.addSubview(BlobImageView)
+            
+            return container
+        }()
         
         let topImageContainerViewConstraints = [
             topImageContainerView.topAnchor.constraint(equalTo: view.topAnchor),
             topImageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             topImageContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            topImageContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
-        ]
-        
-        let BlobImageViewConstraints = [
-            BlobImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
-            BlobImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            BlobImageView.widthAnchor.constraint(equalToConstant: 200),
-            BlobImageView.heightAnchor.constraint(equalToConstant: 200)
+            topImageContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5),
+            
+            BlobImageView.centerXAnchor.constraint(equalTo: topImageContainerView.centerXAnchor),
+            BlobImageView.centerYAnchor.constraint(equalTo: topImageContainerView.centerYAnchor),
+            BlobImageView.heightAnchor.constraint(equalTo: topImageContainerView.heightAnchor, multiplier: 0.5)
+            
         ]
         let descriptionTextViewConstraints = [
-            descriptionTextView.topAnchor.constraint(equalTo: BlobImageView.bottomAnchor, constant: 100),
+            descriptionTextView.topAnchor.constraint(equalTo: BlobImageView.bottomAnchor, constant: 150),
             descriptionTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             descriptionTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             descriptionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ]
 
-        NSLayoutConstraint.activate(BlobImageViewConstraints)
         NSLayoutConstraint.activate(descriptionTextViewConstraints)
         NSLayoutConstraint.activate(topImageContainerViewConstraints)
         
