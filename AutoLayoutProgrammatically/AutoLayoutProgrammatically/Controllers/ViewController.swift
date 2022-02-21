@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "Blob")
         
+        imageView.contentMode = .scaleAspectFit
+        
         return imageView
     }()
     
@@ -25,6 +27,8 @@ class ViewController: UIViewController {
         textView.text = "Join us today in our fun and games!"
         textView.font = UIFont.boldSystemFont(ofSize: 18)
         textView.textAlignment = .center
+        textView.isEditable = false
+        textView.isScrollEnabled = false
         
         return textView
     }()
@@ -43,10 +47,21 @@ class ViewController: UIViewController {
     }
     
     private func setUpLayout() {
+        let topImageContainerView = UIView()
+        topImageContainerView.backgroundColor = .blue
+        topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(topImageContainerView)
+        
+        let topImageContainerViewConstraints = [
+            topImageContainerView.topAnchor.constraint(equalTo: view.topAnchor),
+            topImageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            topImageContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            topImageContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
+        ]
+        
         let BlobImageViewConstraints = [
-            BlobImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            BlobImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
             BlobImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            //imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             BlobImageView.widthAnchor.constraint(equalToConstant: 200),
             BlobImageView.heightAnchor.constraint(equalToConstant: 200)
         ]
@@ -59,6 +74,7 @@ class ViewController: UIViewController {
 
         NSLayoutConstraint.activate(BlobImageViewConstraints)
         NSLayoutConstraint.activate(descriptionTextViewConstraints)
+        NSLayoutConstraint.activate(topImageContainerViewConstraints)
         
     }
 
