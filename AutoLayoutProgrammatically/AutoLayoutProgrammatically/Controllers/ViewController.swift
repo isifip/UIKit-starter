@@ -7,6 +7,10 @@
 
 import UIKit
 
+extension UIColor{
+    static var mainPink = UIColor(red: 232/255, green: 68/255, blue: 133/255, alpha: 1)
+}
+
 class ViewController: UIViewController {
     
     //MARK: --> Properties
@@ -44,8 +48,30 @@ class ViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("PREV", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.gray, for: .normal)
         
         return button
+    }()
+    
+    let nextButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("NEXT", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.mainPink, for: .normal)
+        
+        return button
+    }()
+    
+    private let pageControl: UIPageControl = {
+        let pc = UIPageControl()
+        pc.currentPage = 0
+        pc.numberOfPages = 4
+        pc.currentPageIndicatorTintColor = .mainPink
+        pc.pageIndicatorTintColor = UIColor(red: 249/255, green: 207/255, blue: 224/255, alpha: 1)
+        
+        return pc
     }()
     
 
@@ -62,14 +88,20 @@ class ViewController: UIViewController {
     }
     
     private func setupButtonControls() {
-        view.addSubview(previousButton)
-        previousButton.backgroundColor = .red
+        //view.addSubview(previousButton)
+        
+        let bottomControlsStackView = UIStackView(arrangedSubviews: [previousButton, pageControl, nextButton])
+        bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
+        bottomControlsStackView.distribution = .fillEqually
+        
+        view.addSubview(bottomControlsStackView)
+        
         
         let previousButtonConstraints = [
-            previousButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            previousButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            previousButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            previousButton.heightAnchor.constraint(equalToConstant: 50)
+            bottomControlsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            bottomControlsStackView.heightAnchor.constraint(equalToConstant: 50)
             
         ]
         
