@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIColor{
-    static var mainPink = UIColor(red: 232/255, green: 68/255, blue: 133/255, alpha: 1)
+    static var mainColor = UIColor(red: 136/255, green: 3/255, blue: 252/255, alpha: 1)
 }
 
 class ViewController: UIViewController {
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         button.setTitle("NEXT", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.mainPink, for: .normal)
+        button.setTitleColor(.mainColor, for: .normal)
         
         return button
     }()
@@ -68,13 +68,13 @@ class ViewController: UIViewController {
         let pc = UIPageControl()
         pc.currentPage = 0
         pc.numberOfPages = 4
-        pc.currentPageIndicatorTintColor = .mainPink
-        pc.pageIndicatorTintColor = UIColor(red: 249/255, green: 207/255, blue: 224/255, alpha: 1)
+        pc.currentPageIndicatorTintColor = .mainColor
+        pc.pageIndicatorTintColor = UIColor(red: 213/255, green: 185/255, blue: 237/255, alpha: 1)
         
         return pc
     }()
     
-
+    //MARK: --> LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -87,6 +87,7 @@ class ViewController: UIViewController {
         
     }
     
+    //MARK: --> Buttons and Page Control
     private func setupButtonControls() {
         //view.addSubview(previousButton)
         
@@ -109,6 +110,7 @@ class ViewController: UIViewController {
         
     }
     
+    //MARK: --> Image and Text Layout
     private func setupLayout() {
         
         let topImageContainerView: UIView = {

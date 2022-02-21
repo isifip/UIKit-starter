@@ -12,6 +12,7 @@
 		C725A29E27C3B51D00675D98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725A29D27C3B51D00675D98 /* ViewController.swift */; };
 		C725A2A327C3B51F00675D98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C725A2A227C3B51F00675D98 /* Assets.xcassets */; };
 		C725A2A627C3B51F00675D98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C725A2A427C3B51F00675D98 /* LaunchScreen.storyboard */; };
+		C725A2B227C3F10700675D98 /* SwipingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725A2B127C3F10700675D98 /* SwipingCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C725A2A227C3B51F00675D98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C725A2A527C3B51F00675D98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C725A2A727C3B51F00675D98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C725A2B127C3F10700675D98 /* SwipingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				C725A29D27C3B51D00675D98 /* ViewController.swift */,
+				C725A2B127C3F10700675D98 /* SwipingCollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C725A2B227C3F10700675D98 /* SwipingCollectionViewController.swift in Sources */,
 				C725A29E27C3B51D00675D98 /* ViewController.swift in Sources */,
 				C725A29A27C3B51D00675D98 /* AppDelegate.swift in Sources */,
 				C725A29C27C3B51D00675D98 /* SceneDelegate.swift in Sources */,
