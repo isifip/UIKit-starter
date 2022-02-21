@@ -54,14 +54,30 @@
 		C725A29827C3B51D00675D98 /* AutoLayoutProgrammatically */ = {
 			isa = PBXGroup;
 			children = (
-				C725A29927C3B51D00675D98 /* AppDelegate.swift */,
-				C725A29B27C3B51D00675D98 /* SceneDelegate.swift */,
-				C725A29D27C3B51D00675D98 /* ViewController.swift */,
+				C725A2AD27C3B6C200675D98 /* MainDelegates */,
+				C725A2AE27C3B6D700675D98 /* Controllers */,
 				C725A2A227C3B51F00675D98 /* Assets.xcassets */,
 				C725A2A427C3B51F00675D98 /* LaunchScreen.storyboard */,
 				C725A2A727C3B51F00675D98 /* Info.plist */,
 			);
 			path = AutoLayoutProgrammatically;
+			sourceTree = "<group>";
+		};
+		C725A2AD27C3B6C200675D98 /* MainDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				C725A29927C3B51D00675D98 /* AppDelegate.swift */,
+				C725A29B27C3B51D00675D98 /* SceneDelegate.swift */,
+			);
+			path = MainDelegates;
+			sourceTree = "<group>";
+		};
+		C725A2AE27C3B6D700675D98 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C725A29D27C3B51D00675D98 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
