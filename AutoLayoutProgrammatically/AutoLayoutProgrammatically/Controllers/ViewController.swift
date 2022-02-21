@@ -40,20 +40,44 @@ class ViewController: UIViewController {
         return textView
     }()
     
+    let previousButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("PREV", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
-        
-        //view.addSubview(BlobImageView)
         view.addSubview(descriptionTextView)
-
-        setUpLayout()
+        
+        
+        setupLayout()
+        setupButtonControls()
         
     }
     
-    private func setUpLayout() {
+    private func setupButtonControls() {
+        view.addSubview(previousButton)
+        previousButton.backgroundColor = .red
+        
+        let previousButtonConstraints = [
+            previousButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            previousButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            previousButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            previousButton.heightAnchor.constraint(equalToConstant: 50)
+            
+        ]
+        
+        NSLayoutConstraint.activate(previousButtonConstraints)
+        
+    }
+    
+    private func setupLayout() {
         
         let topImageContainerView: UIView = {
             let container = UIView()
