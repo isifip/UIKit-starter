@@ -20,6 +20,15 @@ class SwipingCollectionViewController: UICollectionViewController, UICollectionV
              bodyText: "Get notified of the savings immediately when we announce them on our website. Make sure to also give us any feedback you have"),
         Page(imageName: "Image2",
              headerText: "VIP members special services",
+             bodyText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
+        Page(imageName: "Blob",
+             headerText: "Joins us todat in our fun and games!",
+             bodyText: "Are you ready for loads and load os fun? Don't wait any longer! We hope to see you in our stores soon."),
+        Page(imageName: "Image1",
+             headerText: "Subscribe and get coupons on our dailty events",
+             bodyText: "Get notified of the savings immediately when we announce them on our website. Make sure to also give us any feedback you have"),
+        Page(imageName: "Image2",
+             headerText: "VIP members special services",
              bodyText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
     ]
     //MARK: --> Buttons and Page Control
@@ -101,6 +110,13 @@ class SwipingCollectionViewController: UICollectionViewController, UICollectionV
         NSLayoutConstraint.activate(previousButtonConstraints)
         
     }
+    
+    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let x = targetContentOffset.pointee.x
+        
+        pageControl.currentPage = Int(x / view.frame.width)
+    }
+    
     //MARK: --> LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
