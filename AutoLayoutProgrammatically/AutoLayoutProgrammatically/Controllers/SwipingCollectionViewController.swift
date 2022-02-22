@@ -12,9 +12,15 @@ private let reuseIdentifier = "Cell"
 class SwipingCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let pages = [
-        Page(imageName: "Blob", headerText: "Joins us todat in our fun and games!"),
-        Page(imageName: "Image1", headerText: "Subscribe and get coupons on our dailty events"),
-        Page(imageName: "Image2", headerText: "VIP members special services")
+        Page(imageName: "Blob",
+             headerText: "Joins us todat in our fun and games!",
+             bodyText: "Are you ready for loads and load os fun? Don't wait any longer! We hope to see you in our stores soon."),
+        Page(imageName: "Image1",
+             headerText: "Subscribe and get coupons on our dailty events",
+             bodyText: "Get notified of the savings immediately when we announce them on our website. Make sure to also give us any feedback you have"),
+        Page(imageName: "Image2",
+             headerText: "VIP members special services",
+             bodyText: "Something")
     ]
 
     override func viewDidLoad() {
@@ -34,8 +40,7 @@ class SwipingCollectionViewController: UICollectionViewController, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PageCell
         
         let page = pages[indexPath.item]
-        cell.BlobImageView.image = UIImage(named: page.imageName)
-        cell.descriptionTextView.text = page.headerText
+        cell.page = page
         
         return cell
     }
