@@ -7,25 +7,8 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
 class SwipingCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        
-        coordinator.animateAlongsideTransition(in: view , animation: { _ in
-            self.collectionViewLayout.invalidateLayout()
-            
-            if self.pageControl.currentPage == 0 {
-                self.collectionView.contentOffset = .zero
-            } else {
-                let indexPath = IndexPath(item: self.pageControl.currentPage, section: 0)
-                self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            }
-            
-        }, completion: nil)
-   
-    }
     
     let pages = [
         Page(imageName: "Blob",
@@ -70,7 +53,7 @@ class SwipingCollectionViewController: UICollectionViewController, UICollectionV
         return button
     }()
     
-    private lazy var pageControl: UIPageControl = {
+    lazy var pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.currentPage = 0
         pc.numberOfPages = pages.count
@@ -81,28 +64,7 @@ class SwipingCollectionViewController: UICollectionViewController, UICollectionV
     }()
     
     
-    //MARK: --> Handling Buttons
-    @objc private func handleNext() {
-        print("Next button tapped")
-        
-        
-        let nextIndex = min(pageControl.currentPage + 1, pages.count - 1)
-        let indexPath = IndexPath(item: nextIndex, section: 0)
-        pageControl.currentPage = nextIndex
-        
-        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-    }
-    
-    @objc private func handlePrev() {
-        print("Prev button tapped")
-        
-        
-        let nextIndex = max(pageControl.currentPage - 1 , 0)
-        let indexPath = IndexPath(item: nextIndex, section: 0)
-        pageControl.currentPage = nextIndex
-        
-        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-    }
+
     
     //MARK: --> Constraints
     private func setupButtonControls() {
@@ -138,34 +100,11 @@ class SwipingCollectionViewController: UICollectionViewController, UICollectionV
         super.viewDidLoad()
         
         collectionView.backgroundColor = .white
-        collectionView.register(PageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(PageCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView.isPagingEnabled = true
 
         
         setupButtonControls()
     }
 
-    //MARK: --> Collection Methods
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pages.count
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PageCell
-        
-        let page = pages[indexPath.item]
-        cell.page = page
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
-    }
-
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
 }
