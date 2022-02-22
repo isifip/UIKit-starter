@@ -22,13 +22,14 @@ class SwipingCollectionViewController: UICollectionViewController, UICollectionV
              headerText: "VIP members special services",
              bodyText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
     ]
-    
+    //MARK: --> Buttons and Page Control
     let previousButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("PREV", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.gray, for: .normal)
+        button.addTarget(self, action: #selector(handlePrev), for: .touchUpInside)
         
         return button
     }()
@@ -39,20 +40,46 @@ class SwipingCollectionViewController: UICollectionViewController, UICollectionV
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.mainColor, for: .normal)
+        button.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
         
         return button
     }()
     
-    private let pageControl: UIPageControl = {
+    private lazy var pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.currentPage = 0
-        pc.numberOfPages = 4
+        pc.numberOfPages = pages.count
         pc.currentPageIndicatorTintColor = .mainColor
         pc.pageIndicatorTintColor = UIColor(red: 213/255, green: 185/255, blue: 237/255, alpha: 1)
         
         return pc
     }()
     
+    
+    //MARK: --> Handling Buttons
+    @objc private func handleNext() {
+        print("Next button tapped")
+        
+        
+        let nextIndex = min(pageControl.currentPage + 1, pages.count - 1)
+        let indexPath = IndexPath(item: nextIndex, section: 0)
+        pageControl.currentPage = nextIndex
+        
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    
+    @objc private func handlePrev() {
+        print("Prev button tapped")
+        
+        
+        let nextIndex = max(pageControl.currentPage - 1 , 0)
+        let indexPath = IndexPath(item: nextIndex, section: 0)
+        pageControl.currentPage = nextIndex
+        
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    
+    //MARK: --> Constraints
     private func setupButtonControls() {
         //view.addSubview(previousButton)
         
@@ -74,7 +101,7 @@ class SwipingCollectionViewController: UICollectionViewController, UICollectionV
         NSLayoutConstraint.activate(previousButtonConstraints)
         
     }
-
+    //MARK: --> LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,6 +113,7 @@ class SwipingCollectionViewController: UICollectionViewController, UICollectionV
         setupButtonControls()
     }
 
+    //MARK: --> Collection Methods
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pages.count
     }
