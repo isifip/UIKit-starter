@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7020A5527C51D24008D8110 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7020A5427C51D24008D8110 /* Page.swift */; };
 		C725A29A27C3B51D00675D98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725A29927C3B51D00675D98 /* AppDelegate.swift */; };
 		C725A29C27C3B51D00675D98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725A29B27C3B51D00675D98 /* SceneDelegate.swift */; };
 		C725A29E27C3B51D00675D98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725A29D27C3B51D00675D98 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C7020A5427C51D24008D8110 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		C725A29627C3B51D00675D98 /* AutoLayoutProgrammatically.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLayoutProgrammatically.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C725A29927C3B51D00675D98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C725A29B27C3B51D00675D98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C7020A5327C51D15008D8110 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C7020A5427C51D24008D8110 /* Page.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C725A28D27C3B51D00675D98 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +71,7 @@
 				C725A2AD27C3B6C200675D98 /* MainDelegates */,
 				C725A2AE27C3B6D700675D98 /* Controllers */,
 				C725A2B327C3F7B300675D98 /* Views */,
+				C7020A5327C51D15008D8110 /* Models */,
 				C725A2A227C3B51F00675D98 /* Assets.xcassets */,
 				C725A2A427C3B51F00675D98 /* LaunchScreen.storyboard */,
 				C725A2A727C3B51F00675D98 /* Info.plist */,
@@ -166,6 +177,7 @@
 			files = (
 				C725A2B227C3F10700675D98 /* SwipingCollectionViewController.swift in Sources */,
 				C725A2B527C3F7DC00675D98 /* PageCell.swift in Sources */,
+				C7020A5527C51D24008D8110 /* Page.swift in Sources */,
 				C725A29E27C3B51D00675D98 /* ViewController.swift in Sources */,
 				C725A29A27C3B51D00675D98 /* AppDelegate.swift in Sources */,
 				C725A29C27C3B51D00675D98 /* SceneDelegate.swift in Sources */,

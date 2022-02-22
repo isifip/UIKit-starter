@@ -26,9 +26,9 @@ class PageCell: UICollectionViewCell {
             string: "Join us today in our fun and games!",
             attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor: UIColor(named: "PrimaryForeground") as Any]
         )
-        attributedText.append(NSAttributedString(
-            string: "\n\n\nAre you ready for loads and load os fun? Don't wait any longer! We hope to see you in our stores soon.",
-            attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13), NSAttributedString.Key.foregroundColor: UIColor.gray]))
+//        attributedText.append(NSAttributedString(
+//            string: "\n\n\nAre you ready for loads and load os fun? Don't wait any longer! We hope to see you in our stores soon.",
+//            attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13), NSAttributedString.Key.foregroundColor: UIColor.gray]))
         
         textView.attributedText = attributedText
         textView.translatesAutoresizingMaskIntoConstraints = false
