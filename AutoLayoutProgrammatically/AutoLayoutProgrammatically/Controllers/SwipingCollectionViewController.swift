@@ -10,6 +10,8 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class SwipingCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    let imageNames = ["Blob", "Image1", "Image2"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +23,13 @@ class SwipingCollectionViewController: UICollectionViewController, UICollectionV
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return imageNames.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PageCell
         
-        //cell.backgroundColor = indexPath.item % 2 == 0 ? .red : .green
+        cell.BlobImageView.image = UIImage(named: imageNames[indexPath.item])
         
         return cell
     }
