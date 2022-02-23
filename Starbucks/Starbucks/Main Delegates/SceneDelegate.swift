@@ -32,7 +32,6 @@ class StarBucksViewController: UIViewController {
 
 class ScanViewController: StarBucksViewController {
     override func viewDidLoad() {
-        view.backgroundColor = .systemIndigo
         title = "Scan"
     }
     override func commonInit() {
@@ -42,7 +41,6 @@ class ScanViewController: StarBucksViewController {
 
 class OrderViewController: StarBucksViewController {
     override func viewDidLoad() {
-        view.backgroundColor = .systemOrange
         title = "Order"
     }
     
@@ -53,7 +51,6 @@ class OrderViewController: StarBucksViewController {
 
 class GiftViewController: StarBucksViewController {
     override func viewDidLoad() {
-        view.backgroundColor = .systemGreen
         title = "Scan"
     }
     override func commonInit() {
@@ -63,7 +60,6 @@ class GiftViewController: StarBucksViewController {
 
 class StoreViewController: StarBucksViewController {
     override func viewDidLoad() {
-        view.backgroundColor = .systemTeal
         title = "Stores"
     }
     
@@ -93,14 +89,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let giftVC = GiftViewController()
         let storeVC = StoreViewController()
         
-        let homeNC = makeNavigationController(rootViewController: homeVC)
+        
         let scanNC = UINavigationController(rootViewController: scanVC)
         let orderNC = UINavigationController(rootViewController: orderVC)
         let giftNC = UINavigationController(rootViewController: giftVC)
         let storeNC = UINavigationController(rootViewController: storeVC)
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [homeNC, scanNC, orderNC, giftNC, storeNC]
+        tabBarController.viewControllers = [homeVC, scanNC, orderNC, giftNC, storeNC]
         
         window?.rootViewController = tabBarController
         
@@ -112,37 +108,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         navigationController.navigationBar.prefersLargeTitles = true
         
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: UIColor.label,
+            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .title1)
+        ]
+        
+        navigationController.navigationBar.largeTitleTextAttributes = attrs
+        
         return navigationController
     }
-
-//    func sceneDidDisconnect(_ scene: UIScene) {
-//        // Called as the scene is being released by the system.
-//        // This occurs shortly after the scene enters the background, or when its session is discarded.
-//        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-//        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
-//    }
-//
-//    func sceneDidBecomeActive(_ scene: UIScene) {
-//        // Called when the scene has moved from an inactive state to an active state.
-//        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-//    }
-//
-//    func sceneWillResignActive(_ scene: UIScene) {
-//        // Called when the scene will move from an active state to an inactive state.
-//        // This may occur due to temporary interruptions (ex. an incoming phone call).
-//    }
-//
-//    func sceneWillEnterForeground(_ scene: UIScene) {
-//        // Called as the scene transitions from the background to the foreground.
-//        // Use this method to undo the changes made on entering the background.
-//    }
-//
-//    func sceneDidEnterBackground(_ scene: UIScene) {
-//        // Called as the scene transitions from the foreground to the background.
-//        // Use this method to save data, release shared resources, and store enough scene-specific state information
-//        // to restore the scene back to its current state.
-//    }
-
 
 }
 
