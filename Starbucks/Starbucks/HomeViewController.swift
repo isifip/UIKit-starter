@@ -7,11 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: StarBucksViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setTabBarItem(imageName: "house.fill", title: "Home")
+        
     }
 
 
