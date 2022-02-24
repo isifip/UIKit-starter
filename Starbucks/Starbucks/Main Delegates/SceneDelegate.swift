@@ -33,6 +33,7 @@ class StarBucksViewController: UIViewController {
 class ScanViewController: StarBucksViewController {
     override func viewDidLoad() {
         title = "Scan"
+        view.backgroundColor = .systemIndigo
     }
     override func commonInit() {
         setTabBarItem(imageName: "qrcode", title: "Scan")
@@ -42,6 +43,7 @@ class ScanViewController: StarBucksViewController {
 class OrderViewController: StarBucksViewController {
     override func viewDidLoad() {
         title = "Order"
+        view.backgroundColor = .systemRed
     }
     
     override func commonInit() {
@@ -52,6 +54,7 @@ class OrderViewController: StarBucksViewController {
 class GiftViewController: StarBucksViewController {
     override func viewDidLoad() {
         title = "Scan"
+        view.backgroundColor = .systemCyan
     }
     override func commonInit() {
         setTabBarItem(imageName: "gift.fill", title: "Gift")
@@ -61,6 +64,7 @@ class GiftViewController: StarBucksViewController {
 class StoreViewController: StarBucksViewController {
     override func viewDidLoad() {
         title = "Stores"
+        view.backgroundColor = .systemPink
     }
     
     override func commonInit() {
@@ -100,22 +104,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.rootViewController = tabBarController
         
-    }
-    
-    
-    func makeNavigationController(rootViewController: UIViewController) -> UINavigationController {
-        let navigationController = UINavigationController(rootViewController: rootViewController)
+        tabBarController.tabBar.tintColor = .lightGreen
+        tabBarController.tabBar.isTranslucent = false
         
-        navigationController.navigationBar.prefersLargeTitles = true
-        
-        let attrs = [
-            NSAttributedString.Key.foregroundColor: UIColor.label,
-            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .title1)
-        ]
-        
-        navigationController.navigationBar.largeTitleTextAttributes = attrs
-        
-        return navigationController
     }
 
 }
