@@ -21,9 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
         
-        let homeController = HomeCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let layout = UICollectionViewFlowLayout()
+        let homeController = HomeCollectionViewController(collectionViewLayout: layout)
         
         window?.rootViewController = UINavigationController(rootViewController: homeController)
+     
         
     }
 
