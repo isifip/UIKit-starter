@@ -10,6 +10,8 @@ import UIKit
 class HomeViewController: StarBucksViewController {
     
     let headerView = HomeHeaderView()
+    var headerViewTopConstraint: NSLayoutConstraint?
+    
     var tableView = UITableView()
     
     let cellId = "cellId"
@@ -64,9 +66,29 @@ extension HomeViewController: UITableViewDataSource {
     
 }
 
+
+//MARK: --> Animating ScrollView
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = scrollView.contentOffset.y
+
+        let swipingDown = y <= 0
+        let shouldSnap = y > 30
+        let labelHeight = headerView.greeting.frame.height + 16
+        
+        UIView.animate(withDuration: 0.3) {
+            self.headerView.greeting.alpha = swipingDown ? 1.0 : 0.0
+        }
+        
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: []) {
+            self.headerViewTopConstraint?.constant = shouldSnap ? -labelHeight : 0
+            self.view.layoutIfNeeded()
+        }
+
     }
 }
 
@@ -75,6 +97,7 @@ extension HomeViewController: UITableViewDelegate {
 extension HomeViewController {
     func style() {
         headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.backgroundColor = .purple
         tableView.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -82,8 +105,11 @@ extension HomeViewController {
         view.addSubview(headerView)
         view.addSubview(tableView)
         
+        headerViewTopConstraint = headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+        
         NSLayoutConstraint.activate([
-            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            //headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            headerViewTopConstraint!,
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
