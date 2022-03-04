@@ -17,12 +17,15 @@ class HomeViewController: StarBucksViewController {
     var headerViewTopConstraint: NSLayoutConstraint?
     
     let tiles = [
-        TileViewController(),
-        PlaceHolderViewController("Star balance"),
-        PlaceHolderViewController("Bonus stars"),
-        PlaceHolderViewController("Try these"),
-        PlaceHolderViewController("Welcome back"),
-        PlaceHolderViewController("Uplifting)")
+        TileViewController(title: "Breakfast made meatless",
+                           subtitle: "Try the beyond Meat, Cheddar & Egg Breakfast Sandwich. Vegetarian and protein-packed.",
+                           imageName: "meatless"),
+        TileViewController(title: "Breakfast made meatless",
+                           subtitle: "Try the beyond Meat, Cheddar & Egg Breakfast Sandwich. Vegetarian and protein-packed.",
+                           imageName: "communities"),
+        TileViewController(title: "Breakfast made meatless",
+                           subtitle: "Try the beyond Meat, Cheddar & Egg Breakfast Sandwich. Vegetarian and protein-packed.",
+                           imageName: "bonus"),
     ]
     
     override func viewDidLoad() {
@@ -75,7 +78,7 @@ extension HomeViewController: UIScrollViewDelegate {
 extension HomeViewController {
     func style() {
         headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.backgroundColor = .purple
+//        headerView.backgroundColor = .purple
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
