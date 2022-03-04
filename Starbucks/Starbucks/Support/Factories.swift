@@ -8,6 +8,16 @@
 import Foundation
 import UIKit
 
+extension UIFont {
+    func withTraits(traits: UIFontDescriptor.SymbolicTraits) -> UIFont {
+        let descriptor = fontDescriptor.withSymbolicTraits(traits)
+        return UIFont(descriptor: descriptor!, size: 0)
+    }
+    
+    func bold() -> UIFont {
+        return withTraits(traits: .traitBold)
+    }
+}
 
 extension UIColor {
     static let starYellow = UIColor(red: 204/255, green: 153/255, blue: 51/255, alpha: 1)
