@@ -14,7 +14,9 @@
 		C793C2E227C67CA3003A9B40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C793C2E127C67CA3003A9B40 /* Assets.xcassets */; };
 		C793C2E527C67CA3003A9B40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C793C2E327C67CA3003A9B40 /* LaunchScreen.storyboard */; };
 		C793C2F127C69513003A9B40 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793C2F027C69513003A9B40 /* HomeHeaderView.swift */; };
-		C7A1AB6D27D22D940054104C /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1AB6C27D22D940054104C /* TileView.swift */; };
+		C7A1AB6D27D22D940054104C /* PlaceHolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1AB6C27D22D940054104C /* PlaceHolderViewController.swift */; };
+		C7A1AB6F27D23F4A0054104C /* TileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1AB6E27D23F4A0054104C /* TileViewController.swift */; };
+		C7A1AB7127D23F720054104C /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1AB7027D23F720054104C /* TileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,9 @@
 		C793C2E427C67CA3003A9B40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C793C2E627C67CA3003A9B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C793C2F027C69513003A9B40 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
-		C7A1AB6C27D22D940054104C /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		C7A1AB6C27D22D940054104C /* PlaceHolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderViewController.swift; sourceTree = "<group>"; };
+		C7A1AB6E27D23F4A0054104C /* TileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileViewController.swift; sourceTree = "<group>"; };
+		C7A1AB7027D23F720054104C /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +94,29 @@
 		C793C2EE27C68FB7003A9B40 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				C793C2DC27C67CA2003A9B40 /* HomeViewController.swift */,
-				C793C2F027C69513003A9B40 /* HomeHeaderView.swift */,
-				C7A1AB6C27D22D940054104C /* TileView.swift */,
+				C7A1AB7327D23F8E0054104C /* Views */,
+				C7A1AB7227D23F890054104C /* Controllers */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		C7A1AB7227D23F890054104C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C793C2DC27C67CA2003A9B40 /* HomeViewController.swift */,
+				C7A1AB6C27D22D940054104C /* PlaceHolderViewController.swift */,
+				C7A1AB6E27D23F4A0054104C /* TileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C7A1AB7327D23F8E0054104C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C793C2F027C69513003A9B40 /* HomeHeaderView.swift */,
+				C7A1AB7027D23F720054104C /* TileView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,9 +191,11 @@
 			files = (
 				C793C2F127C69513003A9B40 /* HomeHeaderView.swift in Sources */,
 				C793C2DD27C67CA2003A9B40 /* HomeViewController.swift in Sources */,
+				C7A1AB7127D23F720054104C /* TileView.swift in Sources */,
 				C793C2D927C67CA2003A9B40 /* AppDelegate.swift in Sources */,
+				C7A1AB6F27D23F4A0054104C /* TileViewController.swift in Sources */,
 				C7378E7927C7C74A00079ED8 /* Factories.swift in Sources */,
-				C7A1AB6D27D22D940054104C /* TileView.swift in Sources */,
+				C7A1AB6D27D22D940054104C /* PlaceHolderViewController.swift in Sources */,
 				C793C2DB27C67CA2003A9B40 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
