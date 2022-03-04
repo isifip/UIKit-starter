@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C7378E7927C7C74A00079ED8 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7378E7827C7C74A00079ED8 /* Factories.swift */; };
+		C74824B827D25FD9004B1EAA /* RewardTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74824B727D25FD9004B1EAA /* RewardTileViewController.swift */; };
+		C74824BA27D25FE3004B1EAA /* RewardTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74824B927D25FE3004B1EAA /* RewardTileView.swift */; };
 		C793C2D927C67CA2003A9B40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793C2D827C67CA2003A9B40 /* AppDelegate.swift */; };
 		C793C2DB27C67CA2003A9B40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793C2DA27C67CA2003A9B40 /* SceneDelegate.swift */; };
 		C793C2DD27C67CA2003A9B40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793C2DC27C67CA2003A9B40 /* HomeViewController.swift */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		C7378E7827C7C74A00079ED8 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
+		C74824B727D25FD9004B1EAA /* RewardTileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardTileViewController.swift; sourceTree = "<group>"; };
+		C74824B927D25FE3004B1EAA /* RewardTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardTileView.swift; sourceTree = "<group>"; };
 		C793C2D527C67CA2003A9B40 /* Starbucks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starbucks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C793C2D827C67CA2003A9B40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C793C2DA27C67CA2003A9B40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 		C793C2EE27C68FB7003A9B40 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C7A1AB7427D25E9E0054104C /* Rewards */,
 				C7A1AB7327D23F8E0054104C /* Views */,
 				C7A1AB7227D23F890054104C /* Controllers */,
 			);
@@ -117,6 +122,15 @@
 				C7A1AB7027D23F720054104C /* TileView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C7A1AB7427D25E9E0054104C /* Rewards */ = {
+			isa = PBXGroup;
+			children = (
+				C74824B727D25FD9004B1EAA /* RewardTileViewController.swift */,
+				C74824B927D25FE3004B1EAA /* RewardTileView.swift */,
+			);
+			path = Rewards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +207,10 @@
 				C793C2DD27C67CA2003A9B40 /* HomeViewController.swift in Sources */,
 				C7A1AB7127D23F720054104C /* TileView.swift in Sources */,
 				C793C2D927C67CA2003A9B40 /* AppDelegate.swift in Sources */,
+				C74824B827D25FD9004B1EAA /* RewardTileViewController.swift in Sources */,
 				C7A1AB6F27D23F4A0054104C /* TileViewController.swift in Sources */,
 				C7378E7927C7C74A00079ED8 /* Factories.swift in Sources */,
+				C74824BA27D25FE3004B1EAA /* RewardTileView.swift in Sources */,
 				C7A1AB6D27D22D940054104C /* PlaceHolderViewController.swift in Sources */,
 				C793C2DB27C67CA2003A9B40 /* SceneDelegate.swift in Sources */,
 			);
