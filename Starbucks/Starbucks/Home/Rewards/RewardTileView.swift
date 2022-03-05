@@ -10,7 +10,7 @@ import UIKit
 class RewardTileView: UIView {
     
     let balanceView = BalanceView()
-    let rewardsGraphView = UIView()
+    let rewardsGraphView = RewardsGraphView()
     let starRewardsView = UIView()
     
     var rewardsButton = UIButton()
@@ -86,8 +86,7 @@ extension RewardTileView {
             
             rewardsGraphView.topAnchor.constraint(equalToSystemSpacingBelow: balanceView.bottomAnchor, multiplier: 1),
             rewardsGraphView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            //rewardsGraphView.widthAnchor.constraint(equalToConstant: frame.width),
-            rewardsGraphView.heightAnchor.constraint(equalToConstant: 100),
+            rewardsGraphView.widthAnchor.constraint(equalToConstant: frame.width),
             rewardsGraphView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             trailingAnchor.constraint(equalToSystemSpacingAfter: rewardsGraphView.trailingAnchor, multiplier: 2),
             

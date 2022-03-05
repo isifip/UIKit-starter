@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C70C885D27D36CA800CA1FBC /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70C885C27D36CA800CA1FBC /* BalanceView.swift */; };
+		C70C885F27D3903200CA1FBC /* RewardsGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70C885E27D3903200CA1FBC /* RewardsGraphView.swift */; };
 		C7378E7927C7C74A00079ED8 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7378E7827C7C74A00079ED8 /* Factories.swift */; };
 		C74824B827D25FD9004B1EAA /* RewardTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74824B727D25FD9004B1EAA /* RewardTileViewController.swift */; };
 		C74824BA27D25FE3004B1EAA /* RewardTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74824B927D25FE3004B1EAA /* RewardTileView.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		C70C885C27D36CA800CA1FBC /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		C70C885E27D3903200CA1FBC /* RewardsGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsGraphView.swift; sourceTree = "<group>"; };
 		C7378E7827C7C74A00079ED8 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		C74824B727D25FD9004B1EAA /* RewardTileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardTileViewController.swift; sourceTree = "<group>"; };
 		C74824B927D25FE3004B1EAA /* RewardTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardTileView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				C74824B727D25FD9004B1EAA /* RewardTileViewController.swift */,
 				C74824B927D25FE3004B1EAA /* RewardTileView.swift */,
 				C70C885C27D36CA800CA1FBC /* BalanceView.swift */,
+				C70C885E27D3903200CA1FBC /* RewardsGraphView.swift */,
 			);
 			path = Rewards;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				C793C2F127C69513003A9B40 /* HomeHeaderView.swift in Sources */,
 				C793C2DD27C67CA2003A9B40 /* HomeViewController.swift in Sources */,
+				C70C885F27D3903200CA1FBC /* RewardsGraphView.swift in Sources */,
 				C70C885D27D36CA800CA1FBC /* BalanceView.swift in Sources */,
 				C7A1AB7127D23F720054104C /* TileView.swift in Sources */,
 				C793C2D927C67CA2003A9B40 /* AppDelegate.swift in Sources */,
