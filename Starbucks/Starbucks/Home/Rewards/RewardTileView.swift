@@ -40,15 +40,34 @@ extension RewardTileView {
         rewardsGraphView.translatesAutoresizingMaskIntoConstraints = false
         starRewardsView.translatesAutoresizingMaskIntoConstraints = false
         
-        rewardsButton.translatesAutoresizingMaskIntoConstraints = false
-        detailsButton .translatesAutoresizingMaskIntoConstraints = false
+        makeRewardsOptionButton()
         
-        rewardsButton.titleLabel?.text = "Rewards Options"
-        detailsButton.titleLabel?.text = "Details"
+        rewardsGraphView.backgroundColor = .systemRed
         
-        rewardsButton.backgroundColor = .systemBlue
-        detailsButton.backgroundColor = .systemBlue
+        detailsButton = makeClearButton(withText: "Details")
+        
          
+    }
+    
+    func makeRewardsOptionButton() {
+        rewardsButton.translatesAutoresizingMaskIntoConstraints = false
+        //rewardsButton.addTarget(self, action: #selector(rewardsOptionTapped), for: .primaryActionTriggered)
+        
+        let configuration = UIImage.SymbolConfiguration(scale: .small)
+        let image = UIImage(systemName: "chevron.down", withConfiguration: configuration)
+        
+        rewardsButton.setImage(image, for: .normal)
+        rewardsButton.imageView?.tintColor = .label
+        rewardsButton.imageView?.contentMode = .scaleAspectFit
+        
+        rewardsButton.setTitle("Rewards options", for: .normal)
+        rewardsButton.setTitleColor(.label, for: .normal)
+        rewardsButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
+        
+        rewardsButton.semanticContentAttribute = .forceRightToLeft
+        rewardsButton.imageEdgeInsets = UIEdgeInsets(top: 2, left: 20, bottom: 0, right: 0)
+        rewardsButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
+        
     }
     
     func layout() {
@@ -67,7 +86,10 @@ extension RewardTileView {
             
             rewardsGraphView.topAnchor.constraint(equalToSystemSpacingBelow: balanceView.bottomAnchor, multiplier: 1),
             rewardsGraphView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            rewardsGraphView.widthAnchor.constraint(equalToConstant: frame.width),
+            //rewardsGraphView.widthAnchor.constraint(equalToConstant: frame.width),
+            rewardsGraphView.heightAnchor.constraint(equalToConstant: 100),
+            rewardsGraphView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
+            trailingAnchor.constraint(equalToSystemSpacingAfter: rewardsGraphView.trailingAnchor, multiplier: 2),
             
             starRewardsView.topAnchor.constraint(equalTo: rewardsGraphView.bottomAnchor, constant: 8),
             starRewardsView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
