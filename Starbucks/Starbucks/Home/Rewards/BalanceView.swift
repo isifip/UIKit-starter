@@ -42,6 +42,20 @@ class BalanceView: UIView {
         addSubview(pointsLabel)
         addSubview(starView)
         addSubview(starBalanceLabel)
+        
+        NSLayoutConstraint.activate([
+            pointsLabel.topAnchor.constraint(equalTo: topAnchor),
+            pointsLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            
+            starView.leadingAnchor.constraint(equalTo: pointsLabel.trailingAnchor, constant: -2),
+            starView.centerYAnchor.constraint(equalTo: pointsLabel.centerYAnchor, constant: 4),
+            starView.heightAnchor.constraint(equalToConstant: 15),
+            
+            starBalanceLabel.topAnchor.constraint(equalTo: pointsLabel.bottomAnchor, constant: 0),
+            starBalanceLabel.leadingAnchor.constraint(equalTo: pointsLabel.leadingAnchor),
+            starBalanceLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            starBalanceLabel.bottomAnchor.constraint(equalTo: bottomAnchor)            
+        ])
     }
 }
 
