@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RewardTileView: UIView {
+class RewardsTileView: UIView {
     
     let balanceView = BalanceView()
     let rewardsGraphView = RewardsGraphView()
@@ -34,15 +34,13 @@ class RewardTileView: UIView {
 }
 
 
-extension RewardTileView {
+extension RewardsTileView {
     func style() {
         balanceView.translatesAutoresizingMaskIntoConstraints = false
         rewardsGraphView.translatesAutoresizingMaskIntoConstraints = false
         starRewardsView.translatesAutoresizingMaskIntoConstraints = false
         
         makeRewardsOptionButton()
-        
-        rewardsGraphView.backgroundColor = .systemRed
         
         detailsButton = makeClearButton(withText: "Details")
         
@@ -98,5 +96,13 @@ extension RewardTileView {
             detailsButton.leadingAnchor.constraint(equalTo: balanceView.leadingAnchor),
             bottomAnchor.constraint(equalToSystemSpacingBelow: detailsButton.bottomAnchor, multiplier: 2)
         ])
+    }
+    
+    // Redraw graph once we know our actual device width & height
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        rewardsGraphView.actualFrameWidth = frame.width
+        rewardsGraphView.drawRewardsGraph()
     }
 }
