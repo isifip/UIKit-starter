@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: StarBucksViewController {
     
+    let topSpacerView = UIView()
+    
     let headerView = HomeHeaderView()
     
     let scrollView = UIScrollView()
@@ -78,9 +80,12 @@ extension HomeViewController: UIScrollViewDelegate {
 //MARK: --> Header
 extension HomeViewController {
     func style() {
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-//        headerView.backgroundColor = .purple
         
+        view.backgroundColor = .backgroundWhite
+        topSpacerView.backgroundColor = .white
+        
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        topSpacerView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -89,6 +94,7 @@ extension HomeViewController {
     }
     
     func layout() {
+        view.addSubview(topSpacerView)
         view.addSubview(headerView)
         view.addSubview(scrollView)
         
@@ -103,6 +109,12 @@ extension HomeViewController {
         headerViewTopConstraint = headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
         
         NSLayoutConstraint.activate([
+            
+            topSpacerView.topAnchor.constraint(equalTo: view.topAnchor),
+            topSpacerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            topSpacerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            topSpacerView.heightAnchor.constraint(equalToConstant: 100),
+            
             headerViewTopConstraint!,
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),

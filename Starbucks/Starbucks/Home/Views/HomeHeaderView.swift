@@ -26,6 +26,9 @@ class HomeHeaderView: UIView {
 
 extension HomeHeaderView {
     func style() {
+        
+        backgroundColor = .white
+        
         greeting.translatesAutoresizingMaskIntoConstraints = false
         greeting.font = UIFont.preferredFont(forTextStyle: .largeTitle).bold()
         greeting.text = "Good afternoon, Irakli"
