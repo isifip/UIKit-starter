@@ -41,7 +41,7 @@ class StarAndPoints: UIView {
         
         NSLayoutConstraint.activate([
             pointsLabel.topAnchor.constraint(equalTo: topAnchor, constant: 2),
-            pointsLabel.trailingAnchor.constraint(equalTo: starView.trailingAnchor, constant: -2),
+            pointsLabel.trailingAnchor.constraint(equalTo: starView.trailingAnchor, constant: -20),
             pointsLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             starView.trailingAnchor.constraint(equalTo: trailingAnchor),
