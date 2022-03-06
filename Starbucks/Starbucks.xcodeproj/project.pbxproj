@@ -23,6 +23,7 @@
 		C7A1AB6D27D22D940054104C /* PlaceHolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1AB6C27D22D940054104C /* PlaceHolderViewController.swift */; };
 		C7A1AB6F27D23F4A0054104C /* TileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1AB6E27D23F4A0054104C /* TileViewController.swift */; };
 		C7A1AB7127D23F720054104C /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1AB7027D23F720054104C /* TileView.swift */; };
+		C7BAEE1927D4EB7B004BC726 /* StarRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BAEE1827D4EB7B004BC726 /* StarRewardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C7A1AB6C27D22D940054104C /* PlaceHolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderViewController.swift; sourceTree = "<group>"; };
 		C7A1AB6E27D23F4A0054104C /* TileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileViewController.swift; sourceTree = "<group>"; };
 		C7A1AB7027D23F720054104C /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		C7BAEE1827D4EB7B004BC726 /* StarRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				C70C886127D3B6BA00CA1FBC /* StarAndPoints.swift */,
 				C70C886327D3BF9F00CA1FBC /* StarRewardsRow.swift */,
+				C7BAEE1827D4EB7B004BC726 /* StarRewardsView.swift */,
 			);
 			path = StarRewards;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				C7A1AB6F27D23F4A0054104C /* TileViewController.swift in Sources */,
 				C7378E7927C7C74A00079ED8 /* Factories.swift in Sources */,
 				C74824BA27D25FE3004B1EAA /* RewardsTileView.swift in Sources */,
+				C7BAEE1927D4EB7B004BC726 /* StarRewardsView.swift in Sources */,
 				C7A1AB6D27D22D940054104C /* PlaceHolderViewController.swift in Sources */,
 				C793C2DB27C67CA2003A9B40 /* SceneDelegate.swift in Sources */,
 			);
