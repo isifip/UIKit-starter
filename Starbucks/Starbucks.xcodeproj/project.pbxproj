@@ -24,6 +24,7 @@
 		C7A1AB6F27D23F4A0054104C /* TileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1AB6E27D23F4A0054104C /* TileViewController.swift */; };
 		C7A1AB7127D23F720054104C /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1AB7027D23F720054104C /* TileView.swift */; };
 		C7BAEE1927D4EB7B004BC726 /* StarRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BAEE1827D4EB7B004BC726 /* StarRewardsView.swift */; };
+		C7BAEE1C27D506D4004BC726 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BAEE1B27D506D4004BC726 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		C7A1AB6E27D23F4A0054104C /* TileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileViewController.swift; sourceTree = "<group>"; };
 		C7A1AB7027D23F720054104C /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		C7BAEE1827D4EB7B004BC726 /* StarRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardsView.swift; sourceTree = "<group>"; };
+		C7BAEE1B27D506D4004BC726 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +120,8 @@
 		C793C2EE27C68FB7003A9B40 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				C70C886027D3B65F00CA1FBC /* StarRewards */,
-				C7A1AB7427D25E9E0054104C /* Rewards */,
+				C7A1AB7427D25E9E0054104C /* RewardsTile */,
+				C7BAEE1A27D506C1004BC726 /* HistoryTile */,
 				C7A1AB7327D23F8E0054104C /* Views */,
 				C7A1AB7227D23F890054104C /* Controllers */,
 			);
@@ -145,15 +147,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		C7A1AB7427D25E9E0054104C /* Rewards */ = {
+		C7A1AB7427D25E9E0054104C /* RewardsTile */ = {
 			isa = PBXGroup;
 			children = (
+				C70C886027D3B65F00CA1FBC /* StarRewards */,
 				C74824B727D25FD9004B1EAA /* RewardsTileViewController.swift */,
 				C74824B927D25FE3004B1EAA /* RewardsTileView.swift */,
 				C70C885C27D36CA800CA1FBC /* BalanceView.swift */,
 				C70C885E27D3903200CA1FBC /* RewardsGraphView.swift */,
 			);
-			path = Rewards;
+			path = RewardsTile;
+			sourceTree = "<group>";
+		};
+		C7BAEE1A27D506C1004BC726 /* HistoryTile */ = {
+			isa = PBXGroup;
+			children = (
+				C7BAEE1B27D506D4004BC726 /* HistoryViewController.swift */,
+			);
+			path = HistoryTile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +244,7 @@
 				C7A1AB7127D23F720054104C /* TileView.swift in Sources */,
 				C70C886427D3BF9F00CA1FBC /* StarRewardsRow.swift in Sources */,
 				C793C2D927C67CA2003A9B40 /* AppDelegate.swift in Sources */,
+				C7BAEE1C27D506D4004BC726 /* HistoryViewController.swift in Sources */,
 				C70C886227D3B6BB00CA1FBC /* StarAndPoints.swift in Sources */,
 				C74824B827D25FD9004B1EAA /* RewardsTileViewController.swift in Sources */,
 				C7A1AB6F27D23F4A0054104C /* TileViewController.swift in Sources */,
