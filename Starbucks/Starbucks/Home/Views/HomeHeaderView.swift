@@ -7,14 +7,21 @@
 
 import UIKit
 
+protocol HomeHeaderViewDelegate: AnyObject {
+    func didTapHistoryButton(_ sender: HomeHeaderView)
+}
+
 class HomeHeaderView: UIView {
 
     let greeting = UILabel()
     let inboxButton = UIButton()
     let historyButton = UIButton()
     
+    weak var delegate: HomeHeaderViewDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        
         style()
         layout()
     }
@@ -97,6 +104,6 @@ extension HomeHeaderView {
 
 extension HomeHeaderView {
     @objc func historyButtonTapped(sender: UIButton) {
-        
+        delegate?.didTapHistoryButton(self)
     }
 }

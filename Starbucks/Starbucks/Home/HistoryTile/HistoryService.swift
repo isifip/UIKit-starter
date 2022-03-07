@@ -16,7 +16,7 @@ struct HistoryService {
     static let shared = HistoryService()
     
     func fetchTransactions(completion: @escaping ((Result<[Transaction], Error>) -> Void)) {
-        guard let url = URL(string: "https://uwyg0quc7d.execute-api.us-west-2.amazonaws.com/prod/history") else { return }
+        let url = URL(string: "")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {

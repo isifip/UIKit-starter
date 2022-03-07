@@ -82,6 +82,15 @@ extension HomeViewController: UIScrollViewDelegate {
     
 }
 
+//MARK: --> HomeHeaderViewDelegate
+
+extension HomeViewController: HomeHeaderViewDelegate {
+    func didTapHistoryButton(_ sender: HomeHeaderView) {
+        let navController = UINavigationController(rootViewController: HistoryViewController())
+        present(navController, animated: true)
+    }
+}
+
 
 //MARK: --> Header
 extension HomeViewController {
@@ -107,6 +116,8 @@ extension HomeViewController {
         scanButton.setTitleColor(.white, for: .normal)
         scanButton.layer.cornerRadius = ScanButtonSpacing.height/2
         scanButton.layer.shadowRadius = 10
+        
+        headerView.delegate = self
     }
     
     func layout() {
