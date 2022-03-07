@@ -42,7 +42,10 @@ class HistoryViewController: UITableViewController {
     
     func style() {
         navigationItem.title = "Sample"
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(HistoryViewCell.self, forCellReuseIdentifier: cellId)
+        
+        tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
     }
     
     func data() {
@@ -67,7 +70,11 @@ class HistoryViewController: UITableViewController {
 //MARK: --> Data Source
 extension HistoryViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? HistoryViewCell else {
+            return UITableViewCell()
+        }
+        
         
         let section = indexPath.section
         
@@ -83,7 +90,7 @@ extension HistoryViewController {
             return UITableViewCell()
         }
         
-        cell.textLabel?.text = transaction.amount
+        cell.transaction = transaction
         
         return cell
     }
