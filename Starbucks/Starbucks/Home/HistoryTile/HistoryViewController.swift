@@ -8,12 +8,16 @@
 import Foundation
 import UIKit
 
-struct HIstorySection {
+struct HistorySection {
     let title: String
     let transactions: [Transaction]
 }
 
-struct Transaction {
+struct History: Codable {
+    let transactions: [Transaction]
+}
+
+struct Transaction: Codable {
     let id: Int
     let type: String
     let amount: String
