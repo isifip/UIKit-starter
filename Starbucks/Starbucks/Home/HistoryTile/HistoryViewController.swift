@@ -33,7 +33,7 @@ struct Transaction: Codable {
 
 class HistoryViewController: UITableViewController {
     
-    var sections = [HIstorySection]()
+    var viewModel: HistoryViewModel?
     
     let cellId = "cellId"
     
@@ -41,7 +41,7 @@ class HistoryViewController: UITableViewController {
         super.viewDidLoad()
         
         style()
-        data()
+        fetchTransactions()
     }
     
     func style() {
@@ -50,23 +50,22 @@ class HistoryViewController: UITableViewController {
         
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
+        
+        viewModel = HistoryViewModel()
     }
     
-    func data() {
-        let tx1 = Transaction(id: 1, type: "redeemable", amount: "1", date: Date())
-        let tx2 = Transaction(id: 1, type: "redeemable", amount: "1", date: Date())
-        let tx22 = Transaction(id: 1, type: "redeemable", amount: "1", date: Date())
-        let tx3 = Transaction(id: 1, type: "redeemable", amount: "1", date: Date())
-        let tx33 = Transaction(id: 1, type: "redeemable", amount: "1", date: Date())
-        let tx333 = Transaction(id: 1, type: "redeemable", amount: "1", date: Date())
-        
-        let firstSection = HIstorySection(title: "July", transactions: [tx1])
-        let secondSection = HIstorySection(title: "June", transactions: [tx2, tx22])
-        let thirdSection = HIstorySection(title: "May", transactions: [tx3, tx33, tx333])
-        
-        sections.append(firstSection)
-        sections.append(secondSection)
-        sections.append(thirdSection)
+    func fetchTransactions() {
+        HistoryService.shared.fetchTransactions { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let transactions):
+                self.viewModel?.transactions = transactions
+                self.tableView.reloadData()
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
     }
 }
 
@@ -74,6 +73,8 @@ class HistoryViewController: UITableViewController {
 //MARK: --> Data Source
 extension HistoryViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let vm = viewModel else { return UITableViewCell() }
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? HistoryViewCell else {
             return UITableViewCell()
@@ -85,11 +86,11 @@ extension HistoryViewController {
         var transaction: Transaction
         switch section {
         case 0:
-            transaction = sections[0].transactions[indexPath.row]
+            transaction = vm.sections[0].transactions[indexPath.row]
         case 1:
-            transaction = sections[1].transactions[indexPath.row]
+            transaction = vm.sections[1].transactions[indexPath.row]
         case 2:
-            transaction = sections[2].transactions[indexPath.row]
+            transaction = vm.sections[2].transactions[indexPath.row]
         default:
             return UITableViewCell()
         }
@@ -100,19 +101,25 @@ extension HistoryViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        guard let vm = viewModel else { return 0 }
+        
         switch section {
-        case 0: return sections[0].transactions.count
-        case 1: return sections[1].transactions.count
-        case 2: return sections[2].transactions.count
+        case 0: return vm.sections[0].transactions.count
+        case 1: return vm.sections[1].transactions.count
+        case 2: return vm.sections[2].transactions.count
         default: return 0
         }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        guard let vm = viewModel else { return nil }
+        
         switch section {
-        case 0: return sections[0].title
-        case 1: return sections[1].title
-        case 2: return sections[2].title
+        case 0: return vm.sections[0].title
+        case 1: return vm.sections[1].title
+        case 2: return vm.sections[2].title
         default: return nil
         }
     }
@@ -126,6 +133,9 @@ extension HistoryViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        guard let sections = viewModel?.sections else { return 0 }
+        
         return sections.count
     }
     
